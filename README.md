@@ -84,7 +84,7 @@ Cojav ofrece consultoría done-for-you para crear e implementar tu archivo de co
 
 ## Sobre
 
-Cojav fue creado por **Indira Réquiz** — Estratega de Implementación de IA, lingüista y data engineer basada en Buenos Aires.
+Cojav fue creado por **Indira Réquiz** — Estratega de Implementación de IA, lingüista y data engineer.
 
 El Brand Context Protocol nace de una observación simple: en la economía agéntica, la marca que mejor se describe gana la recomendación — no necesariamente la mejor marca.
 
