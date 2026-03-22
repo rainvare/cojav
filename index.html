@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cojav — Brand Context Protocol para la Economía Agéntica</title>
+  <meta name="description" content="Cojav hace tu marca legible para agentes de IA. Estructuramos tu identidad, catálogo y contexto en un archivo cojav.json que cualquier agente puede entender y recomendar.">
+  <meta name="keywords" content="brand context protocol, AI agents, agentic commerce, cojav.json, optimización de marca, agentes IA, economía agéntica, comercio agéntico">
+  <meta property="og:title" content="Cojav — Haz tu marca visible para agentes de IA">
+  <meta property="og:description" content="Los agentes de IA son los nuevos compradores. No pueden leer tu web como los humanos. Cojav estructura el contexto de tu marca en un solo archivo legible por máquinas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rainvare.github.io/cojav/">
+
+  <link rel="brand-context" type="application/json" href="https://rainvare.github.io/cojav/ctx/cojav.json">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Cojav",
+    "description": "Consultoría de Brand Context Protocol. Hacemos las marcas legibles para agentes de IA mediante archivos estructurados cojav.json.",
+    "url": "https://rainvare.github.io/cojav/",
+    "founder": {
+      "@type": "Person",
+      "name": "R. Indira Valentina Réquiz Molina",
+      "email": "indirarequiz@gmail.com",
+      "jobTitle": "AI Implementation Strategist"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": ["Brand Context Consulting", "AI Agent Optimization", "Agentic Commerce Readiness", "Semantic Catalog Structuring"],
+    "knowsAbout": ["Brand Context Protocol", "AI Agent Optimization", "Knowledge Graphs", "Agentic Commerce", "Semantic Product Catalogs"],
+    "offers": {
+      "@type": "Offer",
+      "name": "Brand Context Audit",
+      "description": "Free audit of how AI agents currently perceive your brand, with actionable recommendations",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I make my brand visible to AI agents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implement a cojav.json file — a structured brand context file that gives AI agents your identity, catalog with semantic attributes, audience segments, policies, and trust signals. Add a single link tag to your HTML head. Cojav provides done-for-you consulting to create and maintain this file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo hago mi marca visible para agentes de IA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implementa un archivo cojav.json — un archivo estructurado de contexto de marca que da a los agentes de IA tu identidad, catálogo con atributos semánticos, segmentos de audiencia, políticas y señales de confianza. Agrega un solo tag link a tu HTML. Cojav ofrece consultoría done-for-you para crear y mantener este archivo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is cojav.json?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "cojav.json is a Brand Context Protocol file — a structured JSON document containing everything an AI agent needs to understand, recommend, and accurately represent a brand. It works on any platform: Shopify, WordPress, Tiendanube, WooCommerce, or custom sites."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is cojav.json different from llms.txt or AMP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "llms.txt is a documentation index for LLMs. AMP (Azoma) is an enterprise platform for global brands like L'Oréal. cojav.json fills the gap: complete brand context for the 99% of businesses that need AI legibility without enterprise complexity."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-deep: #080b0a;
+      --bg-surface: #0d1210;
+      --bg-elevated: #121a17;
+      --text-primary: #e8e4db;
+      --text-secondary: #a8a296;
+      --text-muted: #6b665e;
+      --emerald: #2ecc71;
+      --emerald-deep: #1a9c54;
+      --emerald-glow: #3ddb80;
+      --emerald-dim: rgba(46, 204, 113, 0.08);
+      --emerald-border: rgba(46, 204, 113, 0.15);
+      --code-bg: #0a0f0d;
+      --code-border: #1a2420;
+      --json-key: #7ec8e3;
+      --json-str: #2ecc71;
+      --json-num: #f0c674;
+      --json-comment: #4a5548;
+      --border-subtle: rgba(232, 228, 219, 0.06);
+      --border-hover: rgba(232, 228, 219, 0.12);
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Libre Franklin', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    :focus-visible {
+      outline: 2px solid var(--emerald);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); border: 0;
+    }
+
+    /* ========== NAVIGATION ========== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      backdrop-filter: blur(24px) saturate(1.2);
+      -webkit-backdrop-filter: blur(24px) saturate(1.2);
+      background: rgba(8, 11, 10, 0.75);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: var(--emerald);
+    }
+    .nav-logo span { color: var(--text-muted); font-weight: 300; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      letter-spacing: 0.02em;
+      transition: color 0.25s;
+      padding: 0.4rem 0;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .nav-cta-link {
+      padding: 0.5rem 1.3rem !important;
+      background: var(--emerald);
+      color: var(--bg-deep) !important;
+      border-radius: var(--radius-sm);
+      font-weight: 600 !important;
+      font-size: 0.78rem !important;
+      letter-spacing: 0.04em;
+      transition: all 0.25s;
+    }
+    .nav-cta-link:hover {
+      background: var(--emerald-glow) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(46, 204, 113, 0.2);
+    }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-hover);
+      border-radius: 20px;
+      overflow: hidden;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+    }
+
+    .lang-btn {
+      padding: 0.3rem 0.7rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.25s;
+      font-family: inherit;
+      font-size: inherit;
+      letter-spacing: 0.06em;
+    }
+
+    .lang-btn.active {
+      background: var(--emerald);
+      color: var(--bg-deep);
+      font-weight: 500;
+    }
+
+    .lang-btn:hover:not(.active) { color: var(--text-primary); }
+
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      width: 40px; height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: border-color 0.25s;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-toggle:hover { border-color: var(--emerald-border); }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        background: rgba(8, 11, 10, 0.96);
+        backdrop-filter: blur(24px);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.2rem;
+        border-bottom: 1px solid var(--border-subtle);
+        transform: translateY(-120%);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-links.open { transform: translateY(0); }
+      .menu-toggle { display: flex; }
+      .nav-inner { padding: 0 1.25rem; }
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 2rem 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 10%; right: -5%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(46, 204, 113, 0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--emerald);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      opacity: 0;
+      animation: fadeIn 0.7s ease forwards 0.1s;
+    }
+
+    .eyebrow-dot {
+      width: 6px; height: 6px;
+      background: var(--emerald);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6.5vw, 5.8rem);
+      font-weight: 400;
+      line-height: 1.08;
+      max-width: 820px;
+      margin-bottom: 1.8rem;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.25s;
+    }
+    .hero h1 em { font-style: italic; color: var(--emerald); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.4s;
+    }
+
+    /* Agent comparison */
+    .agent-comparison {
+      max-width: 680px;
+      border: 1px solid var(--emerald-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    .comparison-header {
+      padding: 0.8rem 1.2rem;
+      background: var(--emerald-dim);
+      border-bottom: 1px solid var(--emerald-border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--emerald);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .comparison-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 540px) { .comparison-body { grid-template-columns: 1fr; } }
+
+    .comparison-side {
+      padding: 1.4rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      line-height: 1.7;
+    }
+
+    .comparison-side:first-child {
+      border-right: 1px solid var(--border-subtle);
+      background: rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 540px) {
+      .comparison-side:first-child { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+    }
+
+    .comparison-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+    .label-without { color: var(--text-muted); }
+    .label-with { color: var(--emerald); }
+    .comparison-side p { color: var(--text-secondary); }
+    .result-good { color: var(--emerald) !important; }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.65s;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.8rem 2rem;
+      border-radius: var(--radius-sm);
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--emerald);
+      color: var(--bg-deep);
+    }
+    .btn-primary:hover {
+      background: var(--emerald-glow);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(46, 204, 113, 0.2);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-hover);
+    }
+    .btn-ghost:hover {
+      border-color: var(--emerald-border);
+      background: var(--emerald-dim);
+    }
+
+    /* ========== ANALOGY STRIP ========== */
+    .analogy-strip {
+      padding: 1.8rem 2rem;
+      background: var(--emerald-dim);
+      border-top: 1px solid var(--emerald-border);
+      border-bottom: 1px solid var(--emerald-border);
+      display: flex;
+      justify-content: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .analogy-item {
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+    }
+    .analogy-before { color: var(--text-muted); text-decoration: line-through; margin-bottom: 0.2rem; }
+    .analogy-arrow { color: var(--text-muted); font-size: 0.6rem; }
+    .analogy-after { color: var(--emerald); font-weight: 500; }
+
+    /* ========== SECTIONS ========== */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--emerald);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.18;
+      max-width: 650px;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .section h2 em { font-style: italic; color: var(--emerald); }
+
+    .section-text {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    /* ========== CODE ========== */
+    .code-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 860px) { .code-grid { grid-template-columns: 1fr; } }
+
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .code-chrome {
+      padding: 0.6rem 1rem;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--code-border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+
+    .code-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-left: 0.4rem;
+    }
+
+    .code-toggle {
+      margin-left: auto;
+      background: none;
+      border: 1px solid var(--code-border);
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .code-toggle:hover { border-color: var(--emerald-border); color: var(--emerald); }
+
+    .code-content {
+      padding: 1.2rem 1.4rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      line-height: 1.85;
+      overflow-x: auto;
+      color: var(--text-primary);
+      max-height: 520px;
+      overflow-y: auto;
+    }
+    .code-content::-webkit-scrollbar { width: 4px; }
+    .code-content::-webkit-scrollbar-track { background: transparent; }
+    .code-content::-webkit-scrollbar-thumb { background: var(--code-border); border-radius: 2px; }
+
+    .k { color: var(--json-key); }
+    .s { color: var(--json-str); }
+    .n { color: var(--json-num); }
+    .c { color: var(--json-comment); font-style: italic; }
+    .t { color: #c792ea; }
+
+    .code-compact { display: block; }
+    .code-full { display: none; }
+    .code-block.expanded .code-compact { display: none; }
+    .code-block.expanded .code-full { display: block; }
+
+    /* ========== STEPS ========== */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } }
+
+    .step-card {
+      padding: 2.2rem 1.8rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--emerald);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .step-card:hover { border-color: var(--emerald-border); transform: translateY(-4px); }
+    .step-card:hover::before { transform: scaleX(1); }
+
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--emerald);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .step-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+    .step-card p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ========== SCHEMA GRID ========== */
+    .schema-mosaic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 640px) { .schema-mosaic { grid-template-columns: repeat(2, 1fr); } }
+
+    .schema-tile {
+      padding: 1.8rem 1.5rem;
+      background: var(--bg-deep);
+      transition: background 0.3s;
+    }
+    .schema-tile:hover { background: var(--emerald-dim); }
+    .schema-tile h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--emerald);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .schema-tile p {
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      line-height: 1.55;
+      font-weight: 300;
+    }
+
+    /* ========== TABLE ========== */
+    .position-table {
+      margin-top: 2.5rem;
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .position-table th {
+      padding: 0.9rem 1.3rem;
+      text-align: left;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .position-table td {
+      padding: 0.9rem 1.3rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+    .position-table tbody tr:last-child td { border-bottom: none; }
+    .row-cojav { background: var(--emerald-dim); }
+    .row-cojav td { color: var(--emerald) !important; font-weight: 500 !important; }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .testimonial-card {
+      padding: 1.8rem;
+      background: var(--bg-surface);
+      border-left: 2px solid var(--emerald);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .testimonial-card blockquote {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--text-primary);
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial-card cite {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-style: normal;
+      display: block;
+    }
+
+    /* ========== CTA ========== */
+    .cta-section {
+      padding: 7rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      bottom: 10%; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 350px;
+      background: radial-gradient(ellipse, rgba(46, 204, 113, 0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--emerald); }
+
+    .cta-sub {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .cta-mailto {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .cta-note {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--border-subtle);
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-brand {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .footer-brand a { color: var(--emerald); }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--emerald); }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .hero { padding: 6rem 1.25rem 3rem; }
+      .section { padding: 4rem 1.25rem; }
+      .analogy-strip { gap: 2rem; padding: 1.5rem 1rem; }
+      .cta-section { padding: 5rem 1.25rem; }
+      footer { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header role="banner">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Cojav home">COJAV<span>.json</span></a>
+      <div class="nav-right">
+        <div class="lang-toggle" role="radiogroup" aria-label="Idioma / Language">
+          <button class="lang-btn active" id="langEs" data-lang="es" role="radio" aria-checked="true">ES</button>
+          <button class="lang-btn" id="langEn" data-lang="en" role="radio" aria-checked="false">EN</button>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
+      </div>
+      <ul class="nav-links" id="navLinks" role="navigation" aria-label="Navegación principal">
+        <li><a href="#problem" data-i18n="nav_problem">El problema</a></li>
+        <li><a href="#protocol" data-i18n="nav_protocol">Protocolo</a></li>
+        <li><a href="#how" data-i18n="nav_how">Cómo funciona</a></li>
+        <li><a href="#schema" data-i18n="nav_schema">Schema</a></li>
+        <li><a href="#position" data-i18n="nav_position">Posicionamiento</a></li>
+        <li><a href="#audit" class="nav-cta-link" data-i18n="nav_cta">Contactanos</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <p class="hero-eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        Brand Context Protocol
+      </p>
+      <h1 id="hero-heading" data-i18n-html="hero_title">Tu marca es <em>invisible</em> para los agentes de IA.</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Los agentes de IA son los nuevos compradores. Recomiendan, comparan y deciden — pero no pueden leer tu web como los humanos. Cojav estructura tu marca en un solo archivo que cualquier agente entiende.</p>
+
+      <div class="agent-comparison" role="figure" aria-label="Comparación de percepción de agente IA">
+        <div class="comparison-header">
+          <span aria-hidden="true">▸</span> <span data-i18n="comp_query">Consulta del agente: "recomendar café argentino de calidad para espresso en casa"</span>
+        </div>
+        <div class="comparison-body">
+          <div class="comparison-side">
+            <p class="comparison-label label-without" data-i18n="comp_without">✗ Sin cojav.json</p>
+            <p data-i18n="comp_without_text">"Cabrales es una marca argentina de café con sede en Mar del Plata. Ofrecen café molido, en grano y cápsulas. Tienen tienda online."</p>
+          </div>
+          <div class="comparison-side">
+            <p class="comparison-label label-with" data-i18n="comp_with">✓ Con cojav.json</p>
+            <p class="result-good" data-i18n="comp_with_text">"Cabrales Prestige es un blend arábigo mild de intensidad media, con buen cuerpo y crema — ideal para espresso. Tostadora argentina con 84 años de historia, certificada Rainforest Alliance, ISO 9001 y 100% libre de TACC."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#audit" class="btn btn-primary" data-i18n="hero_cta">Escribinos →</a>
+        <a href="#protocol" class="btn btn-ghost" data-i18n="hero_cta2">Ver el protocolo</a>
+      </div>
+    </section>
+
+    <!-- ANALOGY STRIP -->
+    <div class="analogy-strip" role="complementary">
+      <div class="analogy-item">
+        <div class="analogy-before" data-i18n="analogy1_old">robots.txt → Google te encuentra</div>
+        <div class="analogy-arrow" aria-hidden="true">↓</div>
+        <div class="analogy-after" data-i18n="analogy1_new">cojav.json → La IA te entiende</div>
+      </div>
+      <div class="analogy-item">
+        <div class="analogy-before" data-i18n="analogy2_old">SEO → posicionate en búsquedas</div>
+        <div class="analogy-arrow" aria-hidden="true">↓</div>
+        <div class="analogy-after" data-i18n="analogy2_new">ACO → que los agentes te recomienden</div>
+      </div>
+      <div class="analogy-item">
+        <div class="analogy-before" data-i18n="analogy3_old">sitemap.xml → lista tus páginas</div>
+        <div class="analogy-arrow" aria-hidden="true">↓</div>
+        <div class="analogy-after" data-i18n="analogy3_new">cojav.json → define tu marca</div>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="section reveal" id="problem" aria-labelledby="problem-heading">
+      <p class="section-label" data-i18n="problem_label">El Problema</p>
+      <h2 id="problem-heading" data-i18n-html="problem_title">Los agentes no navegan. <em>Razonan</em>.</h2>
+      <p class="section-text" data-i18n="problem_text1">Cuando alguien le pide a una IA "encontrar zapatillas para terreno húmedo, menos de $100", el agente no scrollea tus páginas de producto. Sintetiza información de lo que encuentra — Reddit, reviews desactualizados, descripciones de competidores. Tu voz de marca, tus diferenciales, tu catálogo real? Perdidos.</p>
+      <p class="section-text" data-i18n="problem_text2">Las empresas grandes tienen AMP de Azoma. Los merchants de Shopify tienen UCP. Pero el otro 99% de los negocios necesita una solución simple, agnóstica de plataforma, y construida para ellos.</p>
+    </section>
+
+    <!-- PROTOCOL -->
+    <section class="section reveal" id="protocol" aria-labelledby="protocol-heading">
+      <p class="section-label" data-i18n="protocol_label">El Protocolo</p>
+      <h2 id="protocol-heading" data-i18n-html="protocol_title">Un archivo. Contexto de marca <em>completo</em>.</h2>
+      <p class="section-text" data-i18n="protocol_text">cojav.json es un archivo estructurado en una sola URL que le dice a cualquier agente de IA todo lo que necesita para recomendar tu marca con precisión. Un link en tu HTML. Funciona en cualquier plataforma.</p>
+
+      <div class="code-grid">
+        <div class="code-block">
+          <div class="code-chrome">
+            <span class="dot dot-r" aria-hidden="true"></span>
+            <span class="dot dot-y" aria-hidden="true"></span>
+            <span class="dot dot-g" aria-hidden="true"></span>
+            <span class="code-title">tu-sitio.html</span>
+          </div>
+          <div class="code-content">
+<span class="c">/* Agregá esto a tu &lt;head&gt; — eso es todo */</span>
+
+&lt;<span class="t">link</span>
+  <span class="k">rel</span>=<span class="s">"brand-context"</span>
+  <span class="k">type</span>=<span class="s">"application/json"</span>
+  <span class="k">href</span>=<span class="s">"https://rainvare.github.io
+    /cojav/ctx/tu-marca.json"</span>
+/&gt;
+          </div>
+        </div>
+
+        <div class="code-block" id="jsonBlock">
+          <div class="code-chrome">
+            <span class="dot dot-r" aria-hidden="true"></span>
+            <span class="dot dot-y" aria-hidden="true"></span>
+            <span class="dot dot-g" aria-hidden="true"></span>
+            <span class="code-title">cabrales.cojav.json</span>
+            <button class="code-toggle" id="jsonToggle" aria-label="Alternar vista compacta y completa del JSON">
+              expandir ↕
+            </button>
+          </div>
+          <div class="code-content">
+            <div class="code-compact">
+{
+  <span class="k">"$schema"</span>: <span class="s">"cojav/schema/v1"</span>,
+  <span class="k">"identity"</span>: {
+    <span class="k">"name"</span>: <span class="s">"Café Cabrales"</span>,
+    <span class="k">"differentiator"</span>: <span class="s">"Tostadora argentina
+      con 84 años, Rainforest Alliance"</span>
+  },
+  <span class="k">"catalog"</span>: [<span class="c">/* 40+ productos */</span>],
+  <span class="k">"trust"</span>: {
+    <span class="k">"certifications"</span>: [<span class="s">"ISO 9001"</span>,
+      <span class="s">"Rainforest Alliance"</span>, <span class="s">"HACCP"</span>],
+    <span class="k">"founded"</span>: <span class="n">1941</span>
+  }
+}
+            </div>
+            <div class="code-full">
+{
+  <span class="k">"$schema"</span>: <span class="s">"https://rainvare.github.io/cojav/schema/v1"</span>,
+
+  <span class="k">"identity"</span>: {
+    <span class="k">"name"</span>: <span class="s">"Café Cabrales"</span>,
+    <span class="k">"purpose"</span>: <span class="s">"Empresa familiar argentina de café, tostadores desde 1941"</span>,
+    <span class="k">"tone"</span>: <span class="s">"Cálido, apasionado, familiar, experto"</span>,
+    <span class="k">"differentiator"</span>: <span class="s">"Tostadora más antigua de Argentina con certificaciones internacionales"</span>,
+    <span class="k">"founded"</span>: <span class="n">1941</span>,
+    <span class="k">"location"</span>: <span class="s">"Mar del Plata, Argentina"</span>
+  },
+
+  <span class="k">"audience"</span>: [
+    {
+      <span class="k">"segment"</span>: <span class="s">"Amantes del café en casa"</span>,
+      <span class="k">"jtbd"</span>: <span class="s">"Preparar espresso de calidad consistente"</span>
+    },
+    {
+      <span class="k">"segment"</span>: <span class="s">"Consumidores con restricciones alimentarias"</span>,
+      <span class="k">"jtbd"</span>: <span class="s">"Encontrar café certificado libre de TACC"</span>
+    }
+  ],
+
+  <span class="k">"catalog"</span>: [
+    {
+      <span class="k">"name"</span>: <span class="s">"Prestige en Grano"</span>,
+      <span class="k">"type"</span>: <span class="s">"blend"</span>,
+      <span class="k">"origin"</span>: <span class="s">"Arábigos mild"</span>,
+      <span class="k">"roast"</span>: <span class="s">"medio"</span>,
+      <span class="k">"flavor_profile"</span>: [<span class="s">"perfumado"</span>, <span class="s">"aromático"</span>, <span class="s">"dejo persistente"</span>],
+      <span class="k">"intensity"</span>: <span class="s">"media"</span>,
+      <span class="k">"body"</span>: <span class="s">"firme"</span>,
+      <span class="k">"weight_g"</span>: <span class="n">1000</span>,
+      <span class="k">"url"</span>: <span class="s">"/prestige-129"</span>
+    }
+  ],
+
+  <span class="k">"policies"</span>: {
+    <span class="k">"shipping"</span>: <span class="s">"Envío a todo Argentina"</span>,
+    <span class="k">"payment"</span>: <span class="s">"MercadoPago, tarjetas, cuotas"</span>,
+    <span class="k">"dietary"</span>: <span class="s">"100% libre de TACC"</span>
+  },
+
+  <span class="k">"trust"</span>: {
+    <span class="k">"certifications"</span>: [<span class="s">"ISO 9001"</span>, <span class="s">"HACCP"</span>, <span class="s">"Rainforest Alliance"</span>, <span class="s">"Kosher"</span>],
+    <span class="k">"years_in_business"</span>: <span class="n">84</span>,
+    <span class="k">"founded"</span>: <span class="n">1941</span>
+  },
+
+  <span class="k">"meta"</span>: {
+    <span class="k">"protocol"</span>: <span class="s">"cojav/v1"</span>,
+    <span class="k">"updated"</span>: <span class="s">"2026-03-22"</span>,
+    <span class="k">"generator"</span>: <span class="s">"cojav-consulting"</span>
+  }
+}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section reveal" id="how" aria-labelledby="how-heading">
+      <p class="section-label" data-i18n="how_label">Proceso</p>
+      <h2 id="how-heading" data-i18n-html="how_title">Tres pasos para ser <em>agent-ready</em>.</h2>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <p class="step-num" data-i18n="step1_num">01 — Auditoría</p>
+          <h3 data-i18n="step1_title">Leemos tu marca</h3>
+          <p data-i18n="step1_text">Analizamos tu web, catálogo y materiales de marca. Te mostramos exactamente qué entienden los agentes de IA hoy — y qué se les escapa — de tu negocio.</p>
+        </article>
+        <article class="step-card">
+          <p class="step-num" data-i18n="step2_num">02 — Estructuración</p>
+          <h3 data-i18n="step2_title">Construimos tu contexto</h3>
+          <p data-i18n="step2_text">Creamos tu cojav.json con atributos semánticos de producto, segmentos de audiencia, voz de marca, políticas y señales de confianza. Cada campo diseñado para comprensión por máquinas.</p>
+        </article>
+        <article class="step-card">
+          <p class="step-num" data-i18n="step3_num">03 — Implementación</p>
+          <h3 data-i18n="step3_title">Una línea de código</h3>
+          <p data-i18n="step3_text">Agregás un solo tag &lt;link&gt;. Nosotros hosteamos, mantenemos y actualizamos el archivo a medida que tu catálogo evoluciona. Funciona en Shopify, WordPress, Tiendanube, WooCommerce o cualquier sitio custom.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SCHEMA -->
+    <section class="section reveal" id="schema" aria-labelledby="schema-heading">
+      <p class="section-label" data-i18n="schema_label">El Schema</p>
+      <h2 id="schema-heading" data-i18n-html="schema_title">Qué vive dentro de <em>cojav.json</em></h2>
+      <p class="section-text" data-i18n="schema_text">Seis bloques estructurados que dan a cualquier agente de IA comprensión completa de tu marca — desde identidad hasta inventario.</p>
+
+      <div class="schema-mosaic" role="list">
+        <div class="schema-tile" role="listitem">
+          <h4>identity{}</h4>
+          <p data-i18n="schema_identity">Nombre, propósito, tono, diferenciador. El "quién sos" que los agentes necesitan para recomendar con precisión.</p>
+        </div>
+        <div class="schema-tile" role="listitem">
+          <h4>audience[]</h4>
+          <p data-i18n="schema_audience">Segmentos con jobs-to-be-done. Los agentes conectan tus productos con las consultas correctas.</p>
+        </div>
+        <div class="schema-tile" role="listitem">
+          <h4>catalog[]</h4>
+          <p data-i18n="schema_catalog">Productos con atributos semánticos — no "remera roja" sino "algodón cuello redondo, corte relajado, Pantone 186C."</p>
+        </div>
+        <div class="schema-tile" role="listitem">
+          <h4>policies{}</h4>
+          <p data-i18n="schema_policies">Envío, devoluciones, garantía, regiones. Los deal-breakers que los agentes necesitan para cerrar la venta.</p>
+        </div>
+        <div class="schema-tile" role="listitem">
+          <h4>trust{}</h4>
+          <p data-i18n="schema_trust">Certificaciones, reviews agregados, señales de calidad. Lo que le da confianza al agente para recomendarte.</p>
+        </div>
+        <div class="schema-tile" role="listitem">
+          <h4>meta{}</h4>
+          <p data-i18n="schema_meta">Versión del schema, última actualización, contacto. Señales de frescura que construyen confianza del agente con el tiempo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSITIONING -->
+    <section class="section reveal" id="position" aria-labelledby="position-heading">
+      <p class="section-label" data-i18n="position_label">Posicionamiento</p>
+      <h2 id="position-heading" data-i18n-html="position_title">La capa que falta en el <em>comercio agéntico</em></h2>
+      <p class="section-text" data-i18n="position_text">Cada capa del stack agéntico se está construyendo ahora mismo. Cojav llena el espacio entre los estándares de documentación y los protocolos enterprise.</p>
+
+      <table class="position-table" role="table" aria-label="Comparación de estándares de comercio agéntico">
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="table_standard">Estándar</th>
+            <th scope="col" data-i18n="table_purpose">Propósito</th>
+            <th scope="col" data-i18n="table_target">Target</th>
+            <th scope="col" data-i18n="table_complexity">Complejidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>llms.txt</td>
+            <td data-i18n="table_llms_purpose">Índice de documentación para LLMs</td>
+            <td data-i18n="table_llms_target">Dev tools, SaaS</td>
+            <td data-i18n="table_llms_complexity">Baja</td>
+          </tr>
+          <tr class="row-cojav">
+            <td>cojav.json</td>
+            <td data-i18n="table_cojav_purpose">Contexto de marca completo para agentes</td>
+            <td data-i18n="table_cojav_target">Cualquier negocio</td>
+            <td data-i18n="table_cojav_complexity">Baja (done-for-you)</td>
+          </tr>
+          <tr>
+            <td>UCP</td>
+            <td data-i18n="table_ucp_purpose">Checkout y transacciones agénticas</td>
+            <td data-i18n="table_ucp_target">Merchants de Shopify</td>
+            <td data-i18n="table_ucp_complexity">Media</td>
+          </tr>
+          <tr>
+            <td>AMP</td>
+            <td data-i18n="table_amp_purpose">Inteligencia de producto enterprise</td>
+            <td data-i18n="table_amp_target">Marcas globales</td>
+            <td data-i18n="table_amp_complexity">Alta</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section reveal" aria-labelledby="results-heading">
+      <p class="section-label" data-i18n="results_label">Caso de estudio</p>
+      <h2 id="results-heading" data-i18n-html="results_title">Auditoría pública: <em>Café Cabrales</em></h2>
+
+      <div class="testimonials-row">
+        <article class="testimonial-card">
+          <blockquote data-i18n="test1_quote">"Los disclaimers legales de compatibilidad con Nespresso representan más del 50% del texto en las páginas de producto. Un agente de IA ve más texto legal que información sobre el café."</blockquote>
+          <cite data-i18n="test1_cite">— Hallazgo de auditoría: contenido de producto</cite>
+        </article>
+        <article class="testimonial-card">
+          <blockquote data-i18n="test2_quote">"Cabrales tiene 84 años de historia, certificación Rainforest Alliance, ISO 9001 y productos aptos celíacos. Nada de eso está estructurado para que un agente de IA lo use."</blockquote>
+          <cite data-i18n="test2_cite">— Hallazgo de auditoría: contexto de marca</cite>
+        </article>
+        <article class="testimonial-card">
+          <blockquote data-i18n="test3_quote">"Sin Schema.org, sin llms.txt, sin conexión semántica entre el sitio corporativo y la tienda online. La marca que mejor se describe gana la recomendación — no la mejor marca."</blockquote>
+          <cite data-i18n="test3_cite">— Conclusión: <a href="https://rainvare.github.io/cojav/audits/cabrales-2026-03" style="color:var(--emerald)">ver auditoría completa</a></cite>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal" id="audit" aria-labelledby="cta-heading">
+      <h2 id="cta-heading" data-i18n-html="cta_title">Hacé tu marca <em>agent-ready</em>.</h2>
+      <p class="cta-sub" data-i18n="cta_sub">Escribinos para analizar cómo los agentes de IA perciben tu marca hoy y qué están perdiendo. Cada negocio tiene un contexto único — hablemos del tuyo.</p>
+
+      <a class="btn btn-primary cta-mailto" id="ctaMailto" href="mailto:indirarequiz@gmail.com?subject=Consulta%20contexto%20de%20marca%20%E2%80%94%20Cojav&amp;body=Hola%20Indira%2C%0A%0AMe%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20Cojav%20puede%20ayudar%20a%20mi%20negocio.%0A%0AMi%20sitio%20web%3A%20%0A%0AGracias." data-i18n="cta_btn">Escribinos →</a>
+      <br>
+      <p class="cta-note" data-i18n="cta_note">Respondemos en 48h · Consultoría personalizada</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-brand">
+      © 2026 Cojav — Brand Context Protocol
+      · <span data-i18n="footer_built">Creado por</span> <a href="mailto:indirarequiz@gmail.com">Indira Réquiz</a>, <span data-i18n="footer_role">Estratega de Implementación de IA</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/rainvare/cojav">GitHub</a>
+      <a href="https://rainvare.github.io/cojav/ctx/cojav.json" data-i18n="footer_example">Ejemplo cojav.json</a>
+      <a href="https://rainvare.github.io/cojav/audits/cabrales-2026-03" data-i18n="footer_audit">Auditoría Cabrales</a>
+      <a href="mailto:indirarequiz@gmail.com" data-i18n="footer_contact">Contacto</a>
+    </nav>
+  </footer>
+
+  <!-- ==========================================
+       i18n ENGINE
+       ========================================== -->
+  <script>
+    const i18n = {
+      es: {
+        nav_problem: "El problema",
+        nav_protocol: "Protocolo",
+        nav_how: "Cómo funciona",
+        nav_schema: "Schema",
+        nav_position: "Posicionamiento",
+        nav_cta: "Contactanos",
+        hero_title: 'Tu marca es <em>invisible</em> para los agentes de IA.',
+        hero_sub: "Los agentes de IA son los nuevos compradores. Recomiendan, comparan y deciden — pero no pueden leer tu web como los humanos. Cojav estructura tu marca en un solo archivo que cualquier agente entiende.",
+        comp_query: 'Consulta del agente: "recomendar café argentino de calidad para espresso en casa"',
+        comp_without: "✗ Sin cojav.json",
+        comp_without_text: '"Cabrales es una marca argentina de café con sede en Mar del Plata. Ofrecen café molido, en grano y cápsulas. Tienen tienda online."',
+        comp_with: "✓ Con cojav.json",
+        comp_with_text: '"Cabrales Prestige es un blend arábigo mild de intensidad media, con buen cuerpo y crema — ideal para espresso. Tostadora argentina con 84 años de historia, certificada Rainforest Alliance, ISO 9001 y 100% libre de TACC."',
+        hero_cta: "Escribinos →",
+        hero_cta2: "Ver el protocolo",
+        analogy1_old: "robots.txt → Google te encuentra",
+        analogy1_new: "cojav.json → La IA te entiende",
+        analogy2_old: "SEO → posicionate en búsquedas",
+        analogy2_new: "ACO → que los agentes te recomienden",
+        analogy3_old: "sitemap.xml → lista tus páginas",
+        analogy3_new: "cojav.json → define tu marca",
+        problem_label: "El Problema",
+        problem_title: 'Los agentes no navegan. <em>Razonan</em>.',
+        problem_text1: 'Cuando alguien le pide a una IA "encontrar zapatillas para terreno húmedo, menos de $100", el agente no scrollea tus páginas de producto. Sintetiza información de lo que encuentra — Reddit, reviews desactualizados, descripciones de competidores. Tu voz de marca, tus diferenciales, tu catálogo real? Perdidos.',
+        problem_text2: "Las empresas grandes tienen AMP de Azoma. Los merchants de Shopify tienen UCP. Pero el otro 99% de los negocios necesita una solución simple, agnóstica de plataforma, y construida para ellos.",
+        protocol_label: "El Protocolo",
+        protocol_title: 'Un archivo. Contexto de marca <em>completo</em>.',
+        protocol_text: "cojav.json es un archivo estructurado en una sola URL que le dice a cualquier agente de IA todo lo que necesita para recomendar tu marca con precisión. Un link en tu HTML. Funciona en cualquier plataforma.",
+        how_label: "Proceso",
+        how_title: 'Tres pasos para ser <em>agent-ready</em>.',
+        step1_num: "01 — Auditoría",
+        step1_title: "Leemos tu marca",
+        step1_text: "Analizamos tu web, catálogo y materiales de marca. Te mostramos exactamente qué entienden los agentes de IA hoy — y qué se les escapa — de tu negocio.",
+        step2_num: "02 — Estructuración",
+        step2_title: "Construimos tu contexto",
+        step2_text: "Creamos tu cojav.json con atributos semánticos de producto, segmentos de audiencia, voz de marca, políticas y señales de confianza. Cada campo diseñado para comprensión por máquinas.",
+        step3_num: "03 — Implementación",
+        step3_title: "Una línea de código",
+        step3_text: "Agregás un solo tag <link>. Nosotros hosteamos, mantenemos y actualizamos el archivo a medida que tu catálogo evoluciona. Funciona en Shopify, WordPress, Tiendanube, WooCommerce o cualquier sitio custom.",
+        schema_label: "El Schema",
+        schema_title: 'Qué vive dentro de <em>cojav.json</em>',
+        schema_text: "Seis bloques estructurados que dan a cualquier agente de IA comprensión completa de tu marca — desde identidad hasta inventario.",
+        schema_identity: 'Nombre, propósito, tono, diferenciador. El "quién sos" que los agentes necesitan para recomendar con precisión.',
+        schema_audience: "Segmentos con jobs-to-be-done. Los agentes conectan tus productos con las consultas correctas.",
+        schema_catalog: 'Productos con atributos semánticos — no "remera roja" sino "algodón cuello redondo, corte relajado, Pantone 186C."',
+        schema_policies: "Envío, devoluciones, garantía, regiones. Los deal-breakers que los agentes necesitan para cerrar la venta.",
+        schema_trust: "Certificaciones, reviews agregados, señales de calidad. Lo que le da confianza al agente para recomendarte.",
+        schema_meta: "Versión del schema, última actualización, contacto. Señales de frescura que construyen confianza del agente con el tiempo.",
+        position_label: "Posicionamiento",
+        position_title: 'La capa que falta en el <em>comercio agéntico</em>',
+        position_text: "Cada capa del stack agéntico se está construyendo ahora mismo. Cojav llena el espacio entre los estándares de documentación y los protocolos enterprise.",
+        table_standard: "Estándar",
+        table_purpose: "Propósito",
+        table_target: "Target",
+        table_complexity: "Complejidad",
+        table_llms_purpose: "Índice de documentación para LLMs",
+        table_llms_target: "Dev tools, SaaS",
+        table_llms_complexity: "Baja",
+        table_cojav_purpose: "Contexto de marca completo para agentes",
+        table_cojav_target: "Cualquier negocio",
+        table_cojav_complexity: "Baja (done-for-you)",
+        table_ucp_purpose: "Checkout y transacciones agénticas",
+        table_ucp_target: "Merchants de Shopify",
+        table_ucp_complexity: "Media",
+        table_amp_purpose: "Inteligencia de producto enterprise",
+        table_amp_target: "Marcas globales",
+        table_amp_complexity: "Alta",
+        results_label: "Caso de estudio",
+        results_title: 'Auditoría pública: <em>Café Cabrales</em>',
+        test1_quote: '"Los disclaimers legales de compatibilidad con Nespresso representan más del 50% del texto en las páginas de producto. Un agente de IA ve más texto legal que información sobre el café."',
+        test1_cite: "— Hallazgo de auditoría: contenido de producto",
+        test2_quote: '"Cabrales tiene 84 años de historia, certificación Rainforest Alliance, ISO 9001 y productos aptos celíacos. Nada de eso está estructurado para que un agente de IA lo use."',
+        test2_cite: "— Hallazgo de auditoría: contexto de marca",
+        test3_quote: '"Sin Schema.org, sin llms.txt, sin conexión semántica entre el sitio corporativo y la tienda online. La marca que mejor se describe gana la recomendación — no la mejor marca."',
+        test3_cite: "— Conclusión",
+        cta_title: 'Hacé tu marca <em>agent-ready</em>.',
+        cta_sub: "Escribinos para analizar cómo los agentes de IA perciben tu marca hoy y qué están perdiendo. Cada negocio tiene un contexto único — hablemos del tuyo.",
+        cta_btn: "Escribinos →",
+        cta_note: "Respondemos en 48h · Consultoría personalizada",
+        footer_built: "Creado por",
+        footer_role: "Estratega de Implementación de IA",
+        footer_example: "Ejemplo cojav.json",
+        footer_audit: "Auditoría Cabrales",
+        footer_contact: "Contacto"
+      },
+      en: {
+        nav_problem: "The Problem",
+        nav_protocol: "Protocol",
+        nav_how: "How It Works",
+        nav_schema: "Schema",
+        nav_position: "Positioning",
+        nav_cta: "Contact Us",
+        hero_title: 'Your brand is <em>invisible</em> to AI agents.',
+        hero_sub: "AI agents are the new shoppers. They recommend, compare, and decide — but they can't read your website the way humans do. Cojav structures your brand into a single file any agent can understand.",
+        comp_query: 'Agent query: "recommend quality Argentine coffee for home espresso"',
+        comp_without: "✗ Without cojav.json",
+        comp_without_text: '"Cabrales is an Argentine coffee brand based in Mar del Plata. They offer ground coffee, beans, and capsules. They have an online store."',
+        comp_with: "✓ With cojav.json",
+        comp_with_text: '"Cabrales Prestige is a mild arabica blend with medium intensity, full body and good crema — ideal for espresso. Argentine roaster with 84 years of history, Rainforest Alliance, ISO 9001 certified and 100% gluten-free."',
+        hero_cta: "Get in touch →",
+        hero_cta2: "See the protocol",
+        analogy1_old: "robots.txt → Google finds you",
+        analogy1_new: "cojav.json → AI understands you",
+        analogy2_old: "SEO → rank in search results",
+        analogy2_new: "ACO → get recommended by agents",
+        analogy3_old: "sitemap.xml → list all pages",
+        analogy3_new: "cojav.json → define your brand",
+        problem_label: "The Problem",
+        problem_title: 'Agents don\'t browse. They <em>reason</em>.',
+        problem_text1: 'When someone asks an AI "find me running shoes for wet terrain under $100," the agent doesn\'t scroll your product pages. It synthesizes information from whatever it finds — Reddit, outdated reviews, competitor descriptions. Your brand voice, your differentiators, your actual catalog? Lost.',
+        problem_text2: "Enterprises have Azoma's AMP. Shopify merchants have UCP. But the other 99% of businesses need a solution that's simple, platform-agnostic, and actually built for them.",
+        protocol_label: "The Protocol",
+        protocol_title: 'One file. <em>Complete</em> brand context.',
+        protocol_text: "cojav.json is a structured file at a single URL that tells any AI agent everything it needs to recommend your brand accurately. One link in your HTML. Works on any platform.",
+        how_label: "Process",
+        how_title: 'Three steps to <em>agent-ready</em>.',
+        step1_num: "01 — Audit",
+        step1_title: "We read your brand",
+        step1_text: "We analyze your website, catalog, and brand materials. We show you exactly what AI agents currently understand — and miss — about your business.",
+        step2_num: "02 — Structure",
+        step2_title: "We build your context",
+        step2_text: "We create your cojav.json with semantic product attributes, audience segments, brand voice, policies, and trust signals. Every field designed for machine comprehension.",
+        step3_num: "03 — Implement",
+        step3_title: "One line of code",
+        step3_text: "You add a single <link> tag. We host, maintain, and update the file as your catalog evolves. Works on Shopify, WordPress, Tiendanube, WooCommerce, or any custom site.",
+        schema_label: "The Schema",
+        schema_title: 'What lives inside <em>cojav.json</em>',
+        schema_text: "Six structured blocks that give any AI agent complete brand comprehension — from identity to inventory.",
+        schema_identity: 'Name, purpose, tone, differentiator. The "who are you" that agents need to recommend accurately.',
+        schema_audience: "Segments with jobs-to-be-done. Agents match your products to the right queries.",
+        schema_catalog: 'Products with semantic attributes — not "red shirt" but "cotton crew-neck, relaxed fit, Pantone 186C."',
+        schema_policies: "Shipping, returns, warranty, regions. The deal-breakers agents need to close the loop.",
+        schema_trust: "Certifications, aggregated reviews, quality signals. What makes an agent confident recommending you.",
+        schema_meta: "Schema version, last update, contact. Freshness signals that build agent trust over time.",
+        position_label: "Positioning",
+        position_title: 'The missing layer in <em>agentic commerce</em>',
+        position_text: "Every layer of the agentic stack is being built right now. Cojav fills the gap between documentation standards and enterprise protocols.",
+        table_standard: "Standard",
+        table_purpose: "Purpose",
+        table_target: "Target",
+        table_complexity: "Complexity",
+        table_llms_purpose: "Documentation index for LLMs",
+        table_llms_target: "Dev tools, SaaS",
+        table_llms_complexity: "Low",
+        table_cojav_purpose: "Complete brand context for agents",
+        table_cojav_target: "Any business",
+        table_cojav_complexity: "Low (done-for-you)",
+        table_ucp_purpose: "Agentic checkout & transactions",
+        table_ucp_target: "Shopify merchants",
+        table_ucp_complexity: "Medium",
+        table_amp_purpose: "Enterprise product intelligence",
+        table_amp_target: "Global brands",
+        table_amp_complexity: "High",
+        results_label: "Case Study",
+        results_title: 'Public audit: <em>Café Cabrales</em>',
+        test1_quote: '"Nespresso compatibility disclaimers make up over 50% of the text on product pages. An AI agent sees more legal text than coffee information."',
+        test1_cite: "— Audit finding: product content",
+        test2_quote: '"Cabrales has 84 years of history, Rainforest Alliance certification, ISO 9001, and gluten-free products. None of it is structured for AI agents to use."',
+        test2_cite: "— Audit finding: brand context",
+        test3_quote: '"No Schema.org, no llms.txt, no semantic link between corporate site and online store. The brand that describes itself best wins the recommendation — not the best brand."',
+        test3_cite: "— Conclusion",
+        cta_title: 'Make your brand <em>agent-ready</em>.',
+        cta_sub: "Get in touch so we can analyze how AI agents perceive your brand today and what they're missing. Every business has unique context — let's talk about yours.",
+        cta_btn: "Get in touch →",
+        cta_note: "We respond within 48h · Personalized consulting",
+        footer_built: "Built by",
+        footer_role: "AI Implementation Strategist",
+        footer_example: "Example cojav.json",
+        footer_audit: "Cabrales Audit",
+        footer_contact: "Contact"
+      }
+    };
+
+    const mailtoLinks = {
+      es: "mailto:indirarequiz@gmail.com?subject=Consulta%20contexto%20de%20marca%20%E2%80%94%20Cojav&body=Hola%20Indira%2C%0A%0AMe%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20Cojav%20puede%20ayudar%20a%20mi%20negocio.%0A%0AMi%20sitio%20web%3A%20%0A%0AGracias.",
+      en: "mailto:indirarequiz@gmail.com?subject=Brand%20Context%20Inquiry%20%E2%80%94%20Cojav&body=Hi%20Indira%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20how%20Cojav%20can%20help%20my%20business.%0A%0AMy%20website%3A%20%0A%0AThank%20you."
+    };
+
+    let currentLang = 'es';
+
+    function setLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      // Update title
+      document.title = lang === 'es'
+        ? 'Cojav — Brand Context Protocol para la Economía Agéntica'
+        : 'Cojav — Brand Context Protocol for the Agent Economy';
+
+      // Update meta description
+      const metaDesc = document.querySelector('meta[name="description"]');
+      metaDesc.content = lang === 'es'
+        ? 'Cojav hace tu marca legible para agentes de IA. Estructuramos tu identidad, catálogo y contexto en un archivo cojav.json que cualquier agente puede entender y recomendar.'
+        : 'Cojav makes your brand legible to AI agents. We structure your brand identity, catalog, and context into a machine-readable cojav.json file that any AI agent can understand and recommend.';
+
+      // Update all data-i18n elements (text content)
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18n[lang][key]) el.textContent = i18n[lang][key];
+      });
+
+      // Update all data-i18n-html elements (innerHTML for <em> tags)
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+      });
+
+      // Update mailto CTA
+      document.getElementById('ctaMailto').href = mailtoLinks[lang];
+
+      // Update toggle buttons
+      document.getElementById('langEs').classList.toggle('active', lang === 'es');
+      document.getElementById('langEn').classList.toggle('active', lang === 'en');
+      document.getElementById('langEs').setAttribute('aria-checked', lang === 'es');
+      document.getElementById('langEn').setAttribute('aria-checked', lang === 'en');
+
+      // Update JSON toggle button text
+      const jsonBlock = document.getElementById('jsonBlock');
+      const isExpanded = jsonBlock.classList.contains('expanded');
+      document.getElementById('jsonToggle').textContent = lang === 'es'
+        ? (isExpanded ? 'compacto ↕' : 'expandir ↕')
+        : (isExpanded ? 'compact ↕' : 'expand ↕');
+    }
+
+    // Language toggle listeners
+    document.getElementById('langEs').addEventListener('click', () => setLang('es'));
+    document.getElementById('langEn').addEventListener('click', () => setLang('en'));
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.innerHTML = isOpen ? '✕' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '☰';
+      });
+    });
+
+    // JSON toggle
+    const jsonToggle = document.getElementById('jsonToggle');
+    const jsonBlock = document.getElementById('jsonBlock');
+
+    jsonToggle.addEventListener('click', () => {
+      const isExpanded = jsonBlock.classList.toggle('expanded');
+      jsonToggle.textContent = currentLang === 'es'
+        ? (isExpanded ? 'compacto ↕' : 'expandir ↕')
+        : (isExpanded ? 'compact ↕' : 'expand ↕');
+    });
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
