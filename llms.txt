@@ -1,0 +1,34 @@
+# Cojav — Brand Context Protocol
+
+> Cojav is a consultancy and open protocol that makes brands legible to AI agents. We create structured cojav.json files containing brand identity, semantic product catalogs, audience segments, policies, and trust signals — so any AI agent can understand, recommend, and accurately represent a business. Think of cojav.json as the bridge between llms.txt (documentation for AI) and enterprise protocols like AMP or UCP (transaction infrastructure). Cojav serves the 99% of businesses that need AI legibility without enterprise complexity.
+
+## Core Documentation
+
+- [Brand Context Protocol Specification](https://rainvare.github.io/cojav/docs/brand-context-protocol): Technical specification of the cojav.json format — what each section contains, how to implement it, and how it relates to existing standards
+- [What is cojav.json](https://rainvare.github.io/cojav/docs/que-es-cojav-json): Definition, structure, implementation guide, and comparison with llms.txt, AMP, and UCP
+- [Schema v1 Reference](https://rainvare.github.io/cojav/schema/v1.json): Formal JSON Schema specification for the cojav/v1 protocol
+
+## Guides
+
+- [How to Make Your Brand Visible to AI Agents](https://rainvare.github.io/cojav/docs/como-hacer-marca-visible-ia): The problem (agents can't read websites like humans), the solution (structured brand context), and step-by-step implementation
+- [Agentic Commerce for Small Business](https://rainvare.github.io/cojav/docs/agentic-commerce-small-business): What agentic commerce means for SMBs, why preparation matters now, and practical steps
+- [Audit Methodology](https://rainvare.github.io/cojav/docs/audit-methodology): How Cojav audits brand AI-readiness — test agent perception, analyze web content, identify gaps, generate the context file
+
+## Case Studies
+
+- [Café Cabrales Audit (March 2026)](https://rainvare.github.io/cojav/audits/cabrales-2026-03): Public audit of one of Argentina's most recognized coffee brands — 84 years of history, 5 international certifications, yet practically invisible to AI agents. Documents findings and proposed cojav.json solution.
+
+## Examples
+
+- [Cojav's own cojav.json](https://rainvare.github.io/cojav/ctx/cojav.json): Cojav practices what it preaches — our own brand context file
+- [Café Cabrales cojav.json](https://rainvare.github.io/cojav/ctx/cabrales.json): Example brand context file generated from the public audit
+
+## Source
+
+- [GitHub Repository](https://github.com/rainvare/cojav): All source files, schema, documentation, and case studies
+
+## Contact
+
+- Indira Réquiz — AI Implementation Strategist
+- Email: indirarequiz@gmail.com
+- Based in Buenos Aires, Argentina. Remote consulting worldwide.

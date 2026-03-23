@@ -1,0 +1,46 @@
+# Cojav — Brand Context Protocol
+# We WANT AI agents and crawlers to index our content.
+# This is an open protocol designed to be discovered by machines.
+
+User-agent: *
+Allow: /
+
+# AI-specific crawlers — all explicitly welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemaps
+Sitemap: https://rainvare.github.io/cojav/sitemap.xml
+
+# LLM-optimized content index
+# See also: https://rainvare.github.io/cojav/llms.txt
