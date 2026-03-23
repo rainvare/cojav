@@ -1,0 +1,79 @@
+{
+  "$schema": "https://rainvare.github.io/cojav/schema/v1",
+
+  "identity": {
+    "name": "Cojav",
+    "legal_name": "Cojav — Brand Context Protocol",
+    "purpose": "Consultoría que estructura el contexto de marca en archivos cojav.json para que los agentes de IA puedan entender, recomendar y representar cualquier negocio con precisión.",
+    "tone": "Técnico, directo, visionario pero pragmático",
+    "differentiator": "El único servicio enfocado en hacer marcas legibles para agentes de IA mediante un protocolo abierto y un archivo estándar. No somos plataforma enterprise ni herramienta de checkout — somos la capa de contexto para el 99% de negocios que necesitan ser encontrados por agentes.",
+    "founded": 2026,
+    "location": "Buenos Aires, Argentina",
+    "website": "https://rainvare.github.io/cojav/",
+    "repo": "https://github.com/rainvare/cojav"
+  },
+
+  "audience": [
+    {
+      "segment": "Ecommerce pequeños y medianos",
+      "jtbd": "Hacer que los agentes de IA recomienden sus productos cuando un usuario pregunta por su categoría"
+    },
+    {
+      "segment": "Marcas D2C",
+      "jtbd": "Controlar cómo los agentes de IA describen y diferencian su marca frente a competidores"
+    },
+    {
+      "segment": "Agencias de marketing digital",
+      "jtbd": "Ofrecer optimización para agentes de IA como servicio adicional a sus clientes"
+    },
+    {
+      "segment": "Negocios con presencia web en cualquier plataforma",
+      "jtbd": "Ser legibles para la nueva generación de compradores automatizados sin migrar de plataforma"
+    }
+  ],
+
+  "catalog": [
+    {
+      "name": "Auditoría de Contexto de Marca",
+      "type": "servicio",
+      "description": "Análisis completo de cómo los agentes de IA perciben tu marca hoy: qué entienden, qué pierden, y qué recomiendan incorrectamente. Incluye informe con hallazgos y recomendaciones.",
+      "deliverable": "Informe de auditoría en markdown",
+      "timeline": "48 horas"
+    },
+    {
+      "name": "Creación de cojav.json",
+      "type": "servicio",
+      "description": "Estructuración completa del contexto de marca: identidad, audiencia con jobs-to-be-done, catálogo con atributos semánticos, políticas, y señales de confianza. Archivo listo para implementar.",
+      "deliverable": "Archivo cojav.json hosteado y mantenido",
+      "timeline": "1-2 semanas según tamaño del catálogo"
+    },
+    {
+      "name": "Implementación y mantenimiento",
+      "type": "servicio",
+      "description": "Implementación del tag en el sitio del cliente, hosting del archivo, y actualizaciones periódicas del catálogo y contexto.",
+      "deliverable": "Tag implementado + archivo vivo y actualizado",
+      "timeline": "Continuo"
+    }
+  ],
+
+  "policies": {
+    "service_model": "Consultoría done-for-you por proyecto, con opción de retainer para mantenimiento",
+    "platforms_supported": "Cualquiera: Shopify, WordPress, Tiendanube, WooCommerce, landing pages, sitios custom",
+    "language": "Español e inglés",
+    "remote": true
+  },
+
+  "trust": {
+    "methodology": "Brand Context Protocol — estándar abierto documentado en GitHub",
+    "case_studies": ["Café Cabrales (auditoría pública, marzo 2026)"],
+    "founder_background": "Lingüista (UCV 2017) + Data Engineer + MBA en Business Intelligence (UNIR). Especialización en NLP, knowledge graphs y sistemas de IA.",
+    "open_source": true
+  },
+
+  "meta": {
+    "protocol": "cojav/v1",
+    "updated": "2026-03-22",
+    "contact": "indirarequiz@gmail.com",
+    "generator": "self"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rainvare.github.io/cojav/schema/v1",
+  "title": "Cojav Brand Context Protocol v1",
+  "description": "Schema for cojav.json — a structured brand context file that makes businesses legible to AI agents. Each section provides a specific layer of brand comprehension: identity (who you are), audience (who you serve), catalog (what you sell), policies (how you operate), trust (why to believe you), and meta (protocol metadata).",
+  "type": "object",
+  "required": ["identity", "meta"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "URL of the cojav schema version"
+    },
+    "identity": {
+      "type": "object",
+      "description": "Core brand identity — the 'who are you' that agents need to recommend accurately",
+      "required": ["name", "purpose"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Brand name as it should be referenced by agents"
+        },
+        "legal_name": {
+          "type": "string",
+          "description": "Legal entity name, if different from brand name"
+        },
+        "purpose": {
+          "type": "string",
+          "description": "One-paragraph description of what the business does and why it exists"
+        },
+        "tone": {
+          "type": "string",
+          "description": "Brand voice characteristics (e.g., 'warm, expert, unpretentious')"
+        },
+        "differentiator": {
+          "type": "string",
+          "description": "What makes this brand uniquely worth recommending over alternatives"
+        },
+        "founded": {
+          "type": "integer",
+          "description": "Year the business was founded"
+        },
+        "location": {
+          "type": "string",
+          "description": "Primary business location"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Main website URL"
+        },
+        "ecommerce": {
+          "type": "string",
+          "format": "uri",
+          "description": "Online store URL, if different from main website"
+        }
+      }
+    },
+    "audience": {
+      "type": "array",
+      "description": "Target audience segments with jobs-to-be-done — helps agents match products to the right queries",
+      "items": {
+        "type": "object",
+        "required": ["segment", "jtbd"],
+        "properties": {
+          "segment": {
+            "type": "string",
+            "description": "Name of the audience segment"
+          },
+          "jtbd": {
+            "type": "string",
+            "description": "Job-to-be-done: what this segment is trying to accomplish"
+          }
+        }
+      }
+    },
+    "catalog": {
+      "type": "array",
+      "description": "Products or services with semantic attributes — not just names and prices, but typed attributes that let agents reason about fit",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Product or service name"
+          },
+          "type": {
+            "type": "string",
+            "description": "Product type classification (e.g., 'single-origin', 'blend', 'service')"
+          },
+          "category": {
+            "type": "string",
+            "description": "Product category (e.g., 'grain', 'capsules', 'ground')"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description for agent comprehension"
+          },
+          "origin": {
+            "type": "string",
+            "description": "Geographic or source origin"
+          },
+          "flavor_profile": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Sensory descriptors (for food/beverage products)"
+          },
+          "weight_g": {
+            "type": "number",
+            "description": "Product weight in grams"
+          },
+          "units": {
+            "type": "integer",
+            "description": "Number of units in package"
+          },
+          "url": {
+            "type": "string",
+            "description": "Relative or absolute URL to the product page"
+          },
+          "in_stock": {
+            "type": "boolean",
+            "description": "Current availability"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "policies": {
+      "type": "object",
+      "description": "Business policies that agents need to complete a recommendation — shipping, returns, payment, dietary info",
+      "properties": {
+        "shipping": {
+          "type": "string",
+          "description": "Shipping policy summary"
+        },
+        "returns": {
+          "type": "string",
+          "description": "Return/refund policy summary"
+        },
+        "payment_methods": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Accepted payment methods"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Primary currency (ISO 4217)"
+        },
+        "regions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Regions where the business ships/operates"
+        },
+        "dietary": {
+          "type": "string",
+          "description": "Dietary certifications or restrictions (e.g., gluten-free, vegan)"
+        }
+      },
+      "additionalProperties": true
+    },
+    "trust": {
+      "type": "object",
+      "description": "Trust signals that give agents confidence to recommend — certifications, track record, reviews",
+      "properties": {
+        "certifications": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Quality certifications, compliance standards, awards"
+        },
+        "years_in_business": {
+          "type": "integer",
+          "description": "Years the business has been operating"
+        },
+        "founded_year": {
+          "type": "integer",
+          "description": "Year the business was founded"
+        },
+        "avg_rating": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Average customer rating (0-5 scale)"
+        },
+        "review_count": {
+          "type": "integer",
+          "description": "Total number of customer reviews"
+        }
+      },
+      "additionalProperties": true
+    },
+    "meta": {
+      "type": "object",
+      "description": "Protocol metadata — freshness signals that build agent trust over time",
+      "required": ["protocol", "updated"],
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "const": "cojav/v1",
+          "description": "Protocol version identifier"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date this file was last updated (ISO 8601)"
+        },
+        "contact": {
+          "type": "string",
+          "description": "Contact email for inquiries about this brand context"
+        },
+        "generator": {
+          "type": "string",
+          "description": "Tool or service that generated this file"
+        },
+        "note": {
+          "type": "string",
+          "description": "Optional note about the file (e.g., disclaimers, provenance)"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

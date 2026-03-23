@@ -1,0 +1,174 @@
+{
+  "$schema": "https://rainvare.github.io/cojav/schema/v1",
+
+  "identity": {
+    "name": "Café Cabrales",
+    "legal_name": "Cabrales S.A.",
+    "purpose": "Empresa familiar argentina de café con 84 años de historia. Tostadores de café de especialidad y blends propios desde 1941.",
+    "tone": "Cálido, apasionado, familiar, experto pero accesible",
+    "differentiator": "La tostadora de café más antigua de Argentina con certificaciones internacionales (Rainforest Alliance, ISO 9001, HACCP). Combina tradición familiar con estándares de calidad industrial.",
+    "founded": 1941,
+    "location": "Mar del Plata, Buenos Aires, Argentina",
+    "website": "https://www.cabrales.com",
+    "ecommerce": "https://tienda.cabrales.com"
+  },
+
+  "audience": [
+    {
+      "segment": "Amantes del café en casa",
+      "jtbd": "Preparar espresso de calidad consistente sin salir de casa"
+    },
+    {
+      "segment": "Consumidores de cápsulas",
+      "jtbd": "Encontrar cápsulas compatibles Nespresso/Dolce Gusto de marca confiable"
+    },
+    {
+      "segment": "Profesionales de gastronomía",
+      "jtbd": "Proveer café en grano premium para servicio de espresso en locales"
+    },
+    {
+      "segment": "Consumidores con restricciones alimentarias",
+      "jtbd": "Encontrar café certificado libre de TACC (apto celíacos)"
+    }
+  ],
+
+  "catalog": [
+    {
+      "name": "Café en Grano Tostado Prestige",
+      "type": "blend",
+      "category": "grano",
+      "origin": "Blend arábigos tipo mild",
+      "roast": "medio",
+      "flavor_profile": ["perfumado", "suave", "aromático", "dejo persistente", "nota amarga final"],
+      "intensity": "media",
+      "body": "firme",
+      "crema": "buena",
+      "weight_g": 1000,
+      "features": ["válvula aromática antioxidante Goglio"],
+      "preparation": "espresso (6-7g por pocillo)",
+      "url": "/prestige-129"
+    },
+    {
+      "name": "Café en Grano Tostado Colombia",
+      "type": "origen-único",
+      "category": "grano",
+      "origin": "Colombia",
+      "weight_g": 1000,
+      "url": "/colombia"
+    },
+    {
+      "name": "Café en Grano Tostado Perú",
+      "type": "origen-único",
+      "category": "grano",
+      "origin": "Perú",
+      "weight_g": 1000,
+      "url": "/cafe-grano-tostado-peru-1000g"
+    },
+    {
+      "name": "Café en Grano Tostado Brasil",
+      "type": "origen-único",
+      "category": "grano",
+      "origin": "Brasil",
+      "weight_g": 1000,
+      "url": "/cafe-grano-tostado-brasil-1000g"
+    },
+    {
+      "name": "Café Tostado Molido Super Cabrales",
+      "type": "blend",
+      "category": "molido",
+      "flavor_profile": ["aroma intenso", "cuerpo pleno", "sabor clásico"],
+      "weight_g": 500,
+      "url": "/super-cabrales-molido-500g"
+    },
+    {
+      "name": "Cápsulas Cabrales Brasil",
+      "type": "origen-único",
+      "category": "cápsulas",
+      "compatibility": "Nespresso",
+      "origin": "Brasil",
+      "units": 10,
+      "weight_per_unit_g": 5.5,
+      "url": "/cab-nes-al-brasil-10x5-5g"
+    },
+    {
+      "name": "Cápsulas Cabrales Perú",
+      "type": "origen-único",
+      "category": "cápsulas",
+      "compatibility": "Nespresso",
+      "origin": "Perú",
+      "units": 10,
+      "weight_per_unit_g": 5.5,
+      "url": "/cab-nes-al-peru-10x5-5g"
+    },
+    {
+      "name": "Cápsulas La Planta de Café Clásico",
+      "type": "blend",
+      "category": "cápsulas",
+      "compatibility": "Nespresso",
+      "brand_line": "La Planta de Café",
+      "units": 8,
+      "weight_per_unit_g": 5.5,
+      "url": "/cps-nes-lpc-clasico-8x5-5g"
+    },
+    {
+      "name": "Cápsulas La Planta de Café Intenso",
+      "type": "blend",
+      "category": "cápsulas",
+      "compatibility": "Nespresso",
+      "brand_line": "La Planta de Café",
+      "intensity": "alta",
+      "units": 8,
+      "weight_per_unit_g": 5.5,
+      "url": "/cps-nes-lpc-intenso-8x5-5g"
+    },
+    {
+      "name": "La Planta de Café Salted Caramel",
+      "type": "saborizado",
+      "category": "soluble",
+      "flavor_profile": ["caramelo salado"],
+      "brand_line": "La Planta de Café",
+      "weight_g": 100,
+      "url": "/lpc-cappuccino-salted-caramel-100g"
+    },
+    {
+      "name": "Café Tostado Molido VITA",
+      "type": "blend",
+      "category": "molido",
+      "weight_g": 250,
+      "url": "/vita-molido-250g"
+    }
+  ],
+
+  "policies": {
+    "shipping": "Envío a todo Argentina",
+    "payment_methods": ["MercadoPago", "Visa", "Mastercard", "Amex", "Naranja", "Cabal", "Diners"],
+    "installments": "Cuotas sin interés disponibles",
+    "currency": "ARS",
+    "customer_service": "0810 222 CAFÉ (2233)",
+    "dietary": "Todos los productos son 100% libres de TACC (aptos celíacos)"
+  },
+
+  "trust": {
+    "certifications": [
+      "ISO 9001:2015",
+      "HACCP",
+      "Rainforest Alliance (cadena de custodia)",
+      "Kosher",
+      "100% libre de TACC (certificado por Bromatología y Laboratorio Central de La Plata)"
+    ],
+    "years_in_business": 84,
+    "founded_year": 1941,
+    "brand_lines": ["Cabrales", "La Planta de Café", "Liv Endulzantes"],
+    "product_categories": ["café molido", "café en grano", "cápsulas Nespresso", "cápsulas Dolce Gusto", "café soluble", "monodosis", "té", "yerba mate", "endulzantes"],
+    "physical_stores": true,
+    "headquarters": "Rivadavia 3171, Mar del Plata, Buenos Aires, Argentina"
+  },
+
+  "meta": {
+    "protocol": "cojav/v1",
+    "updated": "2026-03-22",
+    "generator": "cojav-consulting",
+    "contact": "indirarequiz@gmail.com",
+    "note": "Archivo generado por Cojav como caso de estudio público del Brand Context Protocol. No fue encargado ni aprobado por Cabrales S.A. Información obtenida de fuentes públicas (cabrales.com y tienda.cabrales.com)."
+  }
+}
