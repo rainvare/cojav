@@ -1,46 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!DOCTYPE html>
-<html lang="es">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ============================================================
-       GEO UPGRADE — Pegar estos bloques en tu index.html existente
-       ============================================================ -->
-
-  <!-- 1. META TAGS MEJORADAS — Reemplazar las que tengas -->
+  <!-- GEO Meta Tags -->
   <title>Cojav — Brand Context Protocol | Haz tu marca visible para agentes de IA</title>
   <meta name="description" content="Cojav es un protocolo abierto que estructura el contexto de marca en un archivo JSON para que agentes de IA como ChatGPT, Perplexity y Gemini recomienden tu negocio con precisión. Consultoría de Agent Commerce Optimization (ACO)." />
   <meta name="keywords" content="brand context protocol, agent commerce optimization, ACO, cojav.json, marca visible IA, agentes de IA, agentic commerce, GEO, generative engine optimization, llms.txt alternativa" />
   <link rel="canonical" href="https://rainvare.github.io/cojav/" />
 
-  <!-- 2. OPEN GRAPH — Para compartir en LinkedIn/redes -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cojav — Brand Context Protocol para la Economía Agéntica" />
   <meta property="og:description" content="Un archivo JSON que hace tu marca legible para agentes de IA. Consultoría de Agent Commerce Optimization para empresas que quieren aparecer en búsquedas de IA." />
   <meta property="og:url" content="https://rainvare.github.io/cojav/" />
   <meta property="og:site_name" content="Cojav" />
   <meta property="og:locale" content="es_AR" />
-  <!-- <meta property="og:image" content="https://rainvare.github.io/cojav/assets/og-image.png" /> -->
 
-  <!-- Twitter/X Card -->
+  <!-- Twitter/X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cojav — Brand Context Protocol" />
   <meta name="twitter:description" content="Haz tu marca visible para agentes de IA con un solo archivo JSON." />
 
-  <!-- 3. ROBOTS — Asegurar que los crawlers de IA puedan acceder -->
+  <!-- Robots -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
-  <!-- ============================================================
-       4. SCHEMA.ORG JSON-LD — PEGAR TODOS ESTOS BLOQUES EN <head>
-       ============================================================ -->
-
-  <!-- 4a. Organization -->
+  <!-- Schema.org: Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,7 +34,6 @@
     "name": "Cojav",
     "alternateName": "Cojav — Brand Context Protocol",
     "url": "https://rainvare.github.io/cojav/",
-    "logo": "https://rainvare.github.io/cojav/assets/logo.png",
     "description": "Cojav es un protocolo abierto y servicio de consultoría que estructura el contexto de marca en un archivo JSON (cojav.json) para que agentes de IA recomienden negocios con precisión. Creado por Indira Réquiz.",
     "founder": {
       "@type": "Person",
@@ -57,9 +42,7 @@
       "url": "https://github.com/rainvare"
     },
     "foundingDate": "2026",
-    "sameAs": [
-      "https://github.com/rainvare/cojav"
-    ],
+    "sameAs": ["https://github.com/rainvare/cojav"],
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "indirarequiz@gmail.com",
@@ -69,7 +52,7 @@
   }
   </script>
 
-  <!-- 4b. WebSite with SearchAction -->
+  <!-- Schema.org: WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,7 +64,7 @@
   }
   </script>
 
-  <!-- 4c. Service (la consultoría) -->
+  <!-- Schema.org: Service -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,15 +72,9 @@
     "name": "Consultoría Cojav — Agent Commerce Optimization",
     "alternateName": "ACO Consulting",
     "description": "Servicio de consultoría que audita la presencia digital de una marca, construye su archivo cojav.json con contexto semántico completo, y lo implementa para que agentes de IA (ChatGPT, Perplexity, Gemini, Claude) recomienden el negocio con precisión.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Cojav"
-    },
+    "provider": { "@type": "Organization", "name": "Cojav" },
     "serviceType": "Agent Commerce Optimization",
-    "areaServed": {
-      "@type": "Place",
-      "name": "Worldwide"
-    },
+    "areaServed": { "@type": "Place", "name": "Worldwide" },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Servicios Cojav",
@@ -131,7 +108,7 @@
   }
   </script>
 
-  <!-- 4d. FAQPage — CLAVE PARA GEO -->
+  <!-- Schema.org: FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -158,7 +135,7 @@
         "name": "¿Qué es cojav.json y cómo funciona?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "cojav.json es un archivo JSON estructurado que vive en una URL pública y contiene todo el contexto que un agente de IA necesita para recomendar tu marca: identidad (nombre, propósito, diferenciador), audiencia (segmentos y jobs-to-be-done), catálogo (productos con atributos semánticos), políticas (envío, pagos, garantías), señales de confianza (certificaciones, antigüedad) y metadatos. Se vincula al sitio web con un tag <link rel='brand-context'> en el HTML."
+          "text": "cojav.json es un archivo JSON estructurado que vive en una URL pública y contiene todo el contexto que un agente de IA necesita para recomendar tu marca: identidad (nombre, propósito, diferenciador), audiencia (segmentos y jobs-to-be-done), catálogo (productos con atributos semánticos), políticas (envío, pagos, garantías), señales de confianza (certificaciones, antigüedad) y metadatos. Se vincula al sitio web con un tag link rel='brand-context' en el HTML."
         }
       },
       {
@@ -166,7 +143,7 @@
         "name": "¿Cuál es la diferencia entre cojav.json, llms.txt y UCP?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "llms.txt es un índice de documentación para que LLMs entiendan herramientas de desarrollo y SaaS. UCP (Universal Checkout Protocol) de Shopify maneja transacciones agénticas para merchants de su plataforma. cojav.json es un protocolo agnóstico de plataforma que estructura el contexto completo de marca para cualquier negocio — no solo documentación ni solo checkout, sino identidad, catálogo, audiencia y confianza. Es la capa intermedia entre los estándares simples y los protocolos enterprise como AMP de Azoma."
+          "text": "llms.txt es un índice de documentación para que LLMs entiendan herramientas de desarrollo y SaaS. UCP (Universal Checkout Protocol) de Shopify maneja transacciones agénticas para merchants de su plataforma. cojav.json es un protocolo agnóstico de plataforma que estructura el contexto completo de marca para cualquier negocio — no solo documentación ni solo checkout, sino identidad, catálogo, audiencia y confianza."
         }
       },
       {
@@ -174,7 +151,7 @@
         "name": "¿Cómo preparo mi empresa para la economía agéntica?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "La economía agéntica es el ecosistema donde agentes de IA actúan como consumidores digitales: buscan, comparan, recomiendan y compran. Para preparar tu empresa necesitás: (1) auditar qué entienden los agentes de IA de tu marca hoy, (2) estructurar tu contexto de marca en un formato legible por máquinas como cojav.json, (3) implementar señales de confianza verificables (certificaciones, antigüedad, reviews), y (4) mantener tu contexto actualizado. Cojav ofrece este proceso como consultoría llave en mano."
+          "text": "La economía agéntica es el ecosistema donde agentes de IA actúan como consumidores digitales: buscan, comparan, recomiendan y compran. Para preparar tu empresa necesitás: (1) auditar qué entienden los agentes de IA de tu marca hoy, (2) estructurar tu contexto de marca en un formato legible por máquinas como cojav.json, (3) implementar señales de confianza verificables, y (4) mantener tu contexto actualizado."
         }
       },
       {
@@ -182,29 +159,22 @@
         "name": "¿Funciona cojav.json con Shopify, WordPress, WooCommerce y Tiendanube?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. cojav.json es agnóstico de plataforma. Se implementa agregando un solo tag <link> en el <head> del HTML de cualquier sitio web. Funciona con Shopify, WordPress, WooCommerce, Tiendanube, Wix, sitios custom y cualquier plataforma que permita editar HTML. El archivo JSON se hostea externamente, por lo que no requiere cambios en la infraestructura del sitio."
+          "text": "Sí. cojav.json es agnóstico de plataforma. Se implementa agregando un solo tag link en el head del HTML de cualquier sitio web. Funciona con Shopify, WordPress, WooCommerce, Tiendanube, Wix, sitios custom y cualquier plataforma que permita editar HTML."
         }
       }
     ]
   }
   </script>
 
-  <!-- 4e. Article — para que la landing sea tratada como contenido citeable -->
+  <!-- Schema.org: Article -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Cojav — Brand Context Protocol: Haz tu marca visible para agentes de IA",
     "description": "Protocolo abierto que estructura el contexto de marca en un archivo JSON para que agentes de IA recomienden tu negocio con precisión. Incluye caso de estudio con Café Cabrales.",
-    "author": {
-      "@type": "Person",
-      "name": "Indira Réquiz",
-      "url": "https://github.com/rainvare"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Cojav"
-    },
+    "author": { "@type": "Person", "name": "Indira Réquiz", "url": "https://github.com/rainvare" },
+    "publisher": { "@type": "Organization", "name": "Cojav" },
     "datePublished": "2026-03-01",
     "dateModified": "2026-03-25",
     "mainEntityOfPage": "https://rainvare.github.io/cojav/",
@@ -212,10 +182,7 @@
   }
   </script>
 
-</head>
-  
-  
-
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400;500&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -357,7 +324,6 @@
       box-shadow: 0 4px 20px rgba(46, 204, 113, 0.2);
     }
 
-    /* Language toggle */
     .lang-toggle {
       display: flex;
       background: var(--bg-elevated);
@@ -388,7 +354,6 @@
 
     .lang-btn:hover:not(.active) { color: var(--text-primary); }
 
-    /* Mobile menu */
     .menu-toggle {
       display: none;
       background: none;
@@ -476,6 +441,29 @@
       animation: fadeUp 0.8s ease forwards 0.25s;
     }
     .hero h1 em { font-style: italic; color: var(--emerald); }
+
+    /* ========== ANSWER CAPSULE (GEO) ========== */
+    .answer-capsule {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.35s;
+      padding-left: 1rem;
+      border-left: 2px solid var(--emerald-border);
+    }
+
+    .answer-capsule code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88em;
+      color: var(--emerald);
+      background: var(--emerald-dim);
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+    }
 
     .hero-sub {
       font-size: 1.1rem;
@@ -870,6 +858,66 @@
       display: block;
     }
 
+    /* ========== FAQ SECTION ========== */
+    #faq {
+      padding: 6rem 2rem;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    #faq > h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.18;
+      max-width: 650px;
+      margin-bottom: 3rem;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    #faq > h2 em { font-style: italic; color: var(--emerald); }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 2rem 0;
+    }
+
+    .faq-item:first-of-type {
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .faq-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.35;
+    }
+
+    .faq-item p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 720px;
+    }
+
+    .faq-item code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--emerald);
+      background: var(--emerald-dim);
+      padding: 0.12em 0.35em;
+      border-radius: 3px;
+    }
+
+    .faq-item strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
     /* ========== CTA ========== */
     .cta-section {
       padding: 7rem 2rem;
@@ -959,6 +1007,7 @@
     @media (max-width: 768px) {
       .hero { padding: 6rem 1.25rem 3rem; }
       .section { padding: 4rem 1.25rem; }
+      #faq { padding: 4rem 1.25rem; }
       .analogy-strip { gap: 2rem; padding: 1.5rem 1rem; }
       .cta-section { padding: 5rem 1.25rem; }
       footer { padding: 2rem 1.25rem; }
@@ -985,6 +1034,7 @@
         <li><a href="#how" data-i18n="nav_how">Cómo funciona</a></li>
         <li><a href="#schema" data-i18n="nav_schema">Schema</a></li>
         <li><a href="#position" data-i18n="nav_position">Posicionamiento</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
         <li><a href="#audit" class="nav-cta-link" data-i18n="nav_cta">Contactanos</a></li>
       </ul>
     </div>
@@ -998,16 +1048,17 @@
         Brand Context Protocol
       </p>
       <h1 id="hero-heading" data-i18n-html="hero_title">Tu marca es <em>invisible</em> para los agentes de IA.</h1>
-      
-    <p class="answer-capsule">
-      Cojav es un protocolo abierto de contexto de marca (Brand Context Protocol) 
-      que estructura la identidad, catálogo, audiencia y señales de confianza de 
-      cualquier negocio en un único archivo JSON — <code>cojav.json</code> — legible 
-      por agentes de IA como ChatGPT, Perplexity, Gemini y Claude. Es la primera 
-      implementación de Agent Commerce Optimization (ACO): la práctica de hacer que 
-      los agentes autónomos de IA recomienden tu marca con precisión. Funciona en 
-      cualquier plataforma con una sola línea de código.
-    </p>
+
+      <p class="answer-capsule">
+        Cojav es un protocolo abierto de contexto de marca (Brand Context Protocol)
+        que estructura la identidad, catálogo, audiencia y señales de confianza de
+        cualquier negocio en un único archivo JSON — <code>cojav.json</code> — legible
+        por agentes de IA como ChatGPT, Perplexity, Gemini y Claude. Es la primera
+        implementación de Agent Commerce Optimization (ACO): la práctica de hacer que
+        los agentes autónomos de IA recomienden tu marca con precisión. Funciona en
+        cualquier plataforma con una sola línea de código.
+      </p>
+
       <div class="agent-comparison" role="figure" aria-label="Comparación de percepción de agente IA">
         <div class="comparison-header">
           <span aria-hidden="true">▸</span> <span data-i18n="comp_query">Consulta del agente: "recomendar café argentino de calidad para espresso en casa"</span>
@@ -1025,7 +1076,7 @@
       </div>
 
       <div class="hero-actions">
-        <a href="#audit" class="btn btn-primary" data-i18n="hero_cta">Escribinos →</a>
+        <a class="btn btn-primary" href="#audit" data-i18n="hero_cta">Escribinos →</a>
         <a href="#protocol" class="btn btn-ghost" data-i18n="hero_cta2">Ver el protocolo</a>
       </div>
     </section>
@@ -1274,7 +1325,7 @@
       </table>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- CASE STUDY -->
     <section class="section reveal" aria-labelledby="results-heading">
       <p class="section-label" data-i18n="results_label">Caso de estudio</p>
       <h2 id="results-heading" data-i18n-html="results_title">Auditoría pública: <em>Café Cabrales</em></h2>
@@ -1295,48 +1346,47 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="reveal" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Preguntas frecuentes sobre <em>visibilidad de marca en IA</em></h2>
 
-    <section id="faq">
-    <h2>Preguntas frecuentes sobre visibilidad de marca en IA</h2>
+      <div class="faq-item">
+        <h3>¿Cómo hago que mi marca aparezca en las recomendaciones de ChatGPT y Perplexity?</h3>
+        <p>Los agentes de IA como ChatGPT, Perplexity y Gemini no navegan tu sitio web como los humanos. Necesitan contexto estructurado para entender tu marca. Cojav crea un archivo <code>cojav.json</code> que contiene tu identidad de marca, catálogo con atributos semánticos, audiencia, políticas y señales de confianza en un formato que cualquier agente de IA puede leer. Se implementa con una sola línea de código en tu HTML.</p>
+      </div>
 
-    <div class="faq-item">
-      <h3>¿Cómo hago que mi marca aparezca en las recomendaciones de ChatGPT y Perplexity?</h3>
-      <p>Los agentes de IA como ChatGPT, Perplexity y Gemini no navegan tu sitio web como los humanos. Necesitan contexto estructurado para entender tu marca. Cojav crea un archivo <code>cojav.json</code> que contiene tu identidad de marca, catálogo con atributos semánticos, audiencia, políticas y señales de confianza en un formato que cualquier agente de IA puede leer. Se implementa con una sola línea de código en tu HTML.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿Qué es Agent Commerce Optimization (ACO)?</h3>
+        <p>Agent Commerce Optimization (ACO) es la práctica de optimizar la presencia digital de una marca para que los agentes de IA la recomienden con precisión. Mientras que SEO optimiza para buscadores tradicionales y GEO optimiza para motores generativos, ACO se enfoca específicamente en que los agentes autónomos que comparan, recomiendan y compran en nombre de usuarios tengan contexto completo de tu marca. Cojav es la primera implementación de ACO a través de un protocolo de contexto de marca estandarizado.</p>
+      </div>
 
-    <div class="faq-item">
-      <h3>¿Qué es Agent Commerce Optimization (ACO)?</h3>
-      <p>Agent Commerce Optimization (ACO) es la práctica de optimizar la presencia digital de una marca para que los agentes de IA la recomienden con precisión. Mientras que SEO optimiza para buscadores tradicionales y GEO optimiza para motores generativos, ACO se enfoca específicamente en que los agentes autónomos que comparan, recomiendan y compran en nombre de usuarios tengan contexto completo de tu marca. Cojav es la primera implementación de ACO a través de un protocolo de contexto de marca estandarizado.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿Qué es cojav.json y cómo funciona?</h3>
+        <p><code>cojav.json</code> es un archivo JSON estructurado que vive en una URL pública y contiene todo el contexto que un agente de IA necesita para recomendar tu marca: identidad (nombre, propósito, diferenciador), audiencia (segmentos y jobs-to-be-done), catálogo (productos con atributos semánticos), políticas (envío, pagos, garantías), señales de confianza (certificaciones, antigüedad) y metadatos. Se vincula al sitio web con un tag <code>&lt;link rel="brand-context"&gt;</code> en el HTML.</p>
+      </div>
 
-    <div class="faq-item">
-      <h3>¿Qué es cojav.json y cómo funciona?</h3>
-      <p><code>cojav.json</code> es un archivo JSON estructurado que vive en una URL pública y contiene todo el contexto que un agente de IA necesita para recomendar tu marca: identidad (nombre, propósito, diferenciador), audiencia (segmentos y jobs-to-be-done), catálogo (productos con atributos semánticos), políticas (envío, pagos, garantías), señales de confianza (certificaciones, antigüedad) y metadatos. Se vincula al sitio web con un tag <code>&lt;link rel="brand-context"&gt;</code> en el HTML.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿Cuál es la diferencia entre cojav.json, llms.txt y UCP?</h3>
+        <p><strong>llms.txt</strong> es un índice de documentación para que LLMs entiendan herramientas de desarrollo y SaaS. <strong>UCP</strong> (Universal Checkout Protocol) de Shopify maneja transacciones agénticas para merchants de su plataforma. <strong>cojav.json</strong> es un protocolo agnóstico de plataforma que estructura el contexto completo de marca para cualquier negocio — no solo documentación ni solo checkout, sino identidad, catálogo, audiencia y confianza. Es la capa intermedia entre los estándares simples y los protocolos enterprise como AMP de Azoma.</p>
+      </div>
 
-    <div class="faq-item">
-      <h3>¿Cuál es la diferencia entre cojav.json, llms.txt y UCP?</h3>
-      <p><strong>llms.txt</strong> es un índice de documentación para que LLMs entiendan herramientas de desarrollo y SaaS. <strong>UCP</strong> (Universal Checkout Protocol) de Shopify maneja transacciones agénticas para merchants de su plataforma. <strong>cojav.json</strong> es un protocolo agnóstico de plataforma que estructura el contexto completo de marca para cualquier negocio — no solo documentación ni solo checkout, sino identidad, catálogo, audiencia y confianza. Es la capa intermedia entre los estándares simples y los protocolos enterprise como AMP de Azoma.</p>
-    </div>
+      <div class="faq-item">
+        <h3>¿Cómo preparo mi empresa para la economía agéntica?</h3>
+        <p>La economía agéntica es el ecosistema donde agentes de IA actúan como consumidores digitales: buscan, comparan, recomiendan y compran. Para preparar tu empresa necesitás: (1) auditar qué entienden los agentes de IA de tu marca hoy, (2) estructurar tu contexto de marca en un formato legible por máquinas como <code>cojav.json</code>, (3) implementar señales de confianza verificables (certificaciones, antigüedad, reviews), y (4) mantener tu contexto actualizado. Cojav ofrece este proceso como consultoría llave en mano.</p>
+      </div>
 
-    <div class="faq-item">
-      <h3>¿Cómo preparo mi empresa para la economía agéntica?</h3>
-      <p>La economía agéntica es el ecosistema donde agentes de IA actúan como consumidores digitales: buscan, comparan, recomiendan y compran. Para preparar tu empresa necesitás: (1) auditar qué entienden los agentes de IA de tu marca hoy, (2) estructurar tu contexto de marca en un formato legible por máquinas como <code>cojav.json</code>, (3) implementar señales de confianza verificables (certificaciones, antigüedad, reviews), y (4) mantener tu contexto actualizado. Cojav ofrece este proceso como consultoría llave en mano.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>¿Funciona cojav.json con Shopify, WordPress, WooCommerce y Tiendanube?</h3>
-      <p>Sí. <code>cojav.json</code> es agnóstico de plataforma. Se implementa agregando un solo tag <code>&lt;link&gt;</code> en el <code>&lt;head&gt;</code> del HTML de cualquier sitio web. Funciona con Shopify, WordPress, WooCommerce, Tiendanube, Wix, sitios custom y cualquier plataforma que permita editar HTML. El archivo JSON se hostea externamente, por lo que no requiere cambios en la infraestructura del sitio.</p>
-    </div>
-  </section>
-
+      <div class="faq-item">
+        <h3>¿Funciona cojav.json con Shopify, WordPress, WooCommerce y Tiendanube?</h3>
+        <p>Sí. <code>cojav.json</code> es agnóstico de plataforma. Se implementa agregando un solo tag <code>&lt;link&gt;</code> en el <code>&lt;head&gt;</code> del HTML de cualquier sitio web. Funciona con Shopify, WordPress, WooCommerce, Tiendanube, Wix, sitios custom y cualquier plataforma que permita editar HTML. El archivo JSON se hostea externamente, por lo que no requiere cambios en la infraestructura del sitio.</p>
+      </div>
+    </section>
 
     <!-- CTA -->
     <section class="cta-section reveal" id="audit" aria-labelledby="cta-heading">
       <h2 id="cta-heading" data-i18n-html="cta_title">Hacé tu marca <em>agent-ready</em>.</h2>
       <p class="cta-sub" data-i18n="cta_sub">Escribinos para analizar cómo los agentes de IA perciben tu marca hoy y qué están perdiendo. Cada negocio tiene un contexto único — hablemos del tuyo.</p>
 
-      <a class="btn btn-primary cta-mailto" id="ctaMailto" href="mailto:indirarequiz@gmail.com?subject=Consulta%20contexto%20de%20marca%20%E2%80%94%20Cojav&amp;body=Hola%20Indira%2C%0A%0AMe%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20Cojav%20puede%20ayudar%20a%20mi%20negocio.%0A%0AMi%20sitio%20web%3A%20%0A%0AGracias." data-i18n="cta_btn">Escribinos →</a>
+      <a class="btn btn-primary cta-mailto" id="ctaMailto" href="mailto:indirarequiz@gmail.com?subject=Consulta%20contexto%20de%20marca%20%E2%80%94%20Cojav&body=Hola%20Indira%2C%0A%0AMe%20interesa%20saber%20m%C3%A1s%20sobre%20c%C3%B3mo%20Cojav%20puede%20ayudar%20a%20mi%20negocio.%0A%0AMi%20sitio%20web%3A%20%0A%0AGracias." data-i18n="cta_btn">Escribinos →</a>
       <br>
       <p class="cta-note" data-i18n="cta_note">Respondemos en 48h · Consultoría personalizada</p>
     </section>
@@ -1356,9 +1406,7 @@
     </nav>
   </footer>
 
-  <!-- ==========================================
-       i18n ENGINE
-       ========================================== -->
+  <!-- i18n ENGINE -->
   <script>
     const i18n = {
       es: {
@@ -1367,6 +1415,7 @@
         nav_how: "Cómo funciona",
         nav_schema: "Schema",
         nav_position: "Posicionamiento",
+        nav_faq: "FAQ",
         nav_cta: "Contactanos",
         hero_title: 'Tu marca es <em>invisible</em> para los agentes de IA.',
         hero_sub: "Los agentes de IA son los nuevos compradores. Recomiendan, comparan y deciden — pero no pueden leer tu web como los humanos. Cojav estructura tu marca en un solo archivo que cualquier agente entiende.",
@@ -1453,6 +1502,7 @@
         nav_how: "How It Works",
         nav_schema: "Schema",
         nav_position: "Positioning",
+        nav_faq: "FAQ",
         nav_cta: "Contact Us",
         hero_title: 'Your brand is <em>invisible</em> to AI agents.',
         hero_sub: "AI agents are the new shoppers. They recommend, compare, and decide — but they can't read your website the way humans do. Cojav structures your brand into a single file any agent can understand.",
@@ -1546,39 +1596,32 @@
       currentLang = lang;
       document.documentElement.lang = lang;
 
-      // Update title
       document.title = lang === 'es'
-        ? 'Cojav — Brand Context Protocol para la Economía Agéntica'
-        : 'Cojav — Brand Context Protocol for the Agent Economy';
+        ? 'Cojav — Brand Context Protocol | Haz tu marca visible para agentes de IA'
+        : 'Cojav — Brand Context Protocol | Make your brand visible to AI agents';
 
-      // Update meta description
       const metaDesc = document.querySelector('meta[name="description"]');
       metaDesc.content = lang === 'es'
-        ? 'Cojav hace tu marca legible para agentes de IA. Estructuramos tu identidad, catálogo y contexto en un archivo cojav.json que cualquier agente puede entender y recomendar.'
-        : 'Cojav makes your brand legible to AI agents. We structure your brand identity, catalog, and context into a machine-readable cojav.json file that any AI agent can understand and recommend.';
+        ? 'Cojav es un protocolo abierto que estructura el contexto de marca en un archivo JSON para que agentes de IA como ChatGPT, Perplexity y Gemini recomienden tu negocio con precisión. Consultoría de Agent Commerce Optimization (ACO).'
+        : 'Cojav is an open protocol that structures brand context into a JSON file so AI agents like ChatGPT, Perplexity and Gemini recommend your business accurately. Agent Commerce Optimization (ACO) consulting.';
 
-      // Update all data-i18n elements (text content)
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (i18n[lang][key]) el.textContent = i18n[lang][key];
       });
 
-      // Update all data-i18n-html elements (innerHTML for <em> tags)
       document.querySelectorAll('[data-i18n-html]').forEach(el => {
         const key = el.getAttribute('data-i18n-html');
         if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
       });
 
-      // Update mailto CTA
       document.getElementById('ctaMailto').href = mailtoLinks[lang];
 
-      // Update toggle buttons
       document.getElementById('langEs').classList.toggle('active', lang === 'es');
       document.getElementById('langEn').classList.toggle('active', lang === 'en');
       document.getElementById('langEs').setAttribute('aria-checked', lang === 'es');
       document.getElementById('langEn').setAttribute('aria-checked', lang === 'en');
 
-      // Update JSON toggle button text
       const jsonBlock = document.getElementById('jsonBlock');
       const isExpanded = jsonBlock.classList.contains('expanded');
       document.getElementById('jsonToggle').textContent = lang === 'es'
@@ -1586,7 +1629,6 @@
         : (isExpanded ? 'compact ↕' : 'expand ↕');
     }
 
-    // Language toggle listeners
     document.getElementById('langEs').addEventListener('click', () => setLang('es'));
     document.getElementById('langEn').addEventListener('click', () => setLang('en'));
 
@@ -1620,13 +1662,16 @@
     });
 
     // Scroll reveal
-    const revealObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08 });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>
