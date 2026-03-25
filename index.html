@@ -3,42 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cojav — Brand Context Protocol para la Economía Agéntica</title>
-  <meta name="description" content="Cojav hace tu marca legible para agentes de IA. Estructuramos tu identidad, catálogo y contexto en un archivo cojav.json que cualquier agente puede entender y recomendar.">
-  <meta name="keywords" content="brand context protocol, AI agents, agentic commerce, cojav.json, optimización de marca, agentes IA, economía agéntica, comercio agéntico">
-  <meta property="og:title" content="Cojav — Haz tu marca visible para agentes de IA">
-  <meta property="og:description" content="Los agentes de IA son los nuevos compradores. No pueden leer tu web como los humanos. Cojav estructura el contexto de tu marca en un solo archivo legible por máquinas.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rainvare.github.io/cojav/">
-<meta name="google-site-verification" content="jFq4hQEDf72hllzsvCX_-uvQEc3OZA3uwX87Alagljw" />
-  <link rel="brand-context" type="application/json" href="https://rainvare.github.io/cojav/ctx/cojav.json">
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- ============================================================
+       GEO UPGRADE — Pegar estos bloques en tu index.html existente
+       ============================================================ -->
+
+  <!-- 1. META TAGS MEJORADAS — Reemplazar las que tengas -->
+  <title>Cojav — Brand Context Protocol | Haz tu marca visible para agentes de IA</title>
+  <meta name="description" content="Cojav es un protocolo abierto que estructura el contexto de marca en un archivo JSON para que agentes de IA como ChatGPT, Perplexity y Gemini recomienden tu negocio con precisión. Consultoría de Agent Commerce Optimization (ACO)." />
+  <meta name="keywords" content="brand context protocol, agent commerce optimization, ACO, cojav.json, marca visible IA, agentes de IA, agentic commerce, GEO, generative engine optimization, llms.txt alternativa" />
+  <link rel="canonical" href="https://rainvare.github.io/cojav/" />
+
+  <!-- 2. OPEN GRAPH — Para compartir en LinkedIn/redes -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cojav — Brand Context Protocol para la Economía Agéntica" />
+  <meta property="og:description" content="Un archivo JSON que hace tu marca legible para agentes de IA. Consultoría de Agent Commerce Optimization para empresas que quieren aparecer en búsquedas de IA." />
+  <meta property="og:url" content="https://rainvare.github.io/cojav/" />
+  <meta property="og:site_name" content="Cojav" />
+  <meta property="og:locale" content="es_AR" />
+  <!-- <meta property="og:image" content="https://rainvare.github.io/cojav/assets/og-image.png" /> -->
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cojav — Brand Context Protocol" />
+  <meta name="twitter:description" content="Haz tu marca visible para agentes de IA con un solo archivo JSON." />
+
+  <!-- 3. ROBOTS — Asegurar que los crawlers de IA puedan acceder -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+  <!-- ============================================================
+       4. SCHEMA.ORG JSON-LD — PEGAR TODOS ESTOS BLOQUES EN <head>
+       ============================================================ -->
+
+  <!-- 4a. Organization -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "Organization",
     "name": "Cojav",
-    "description": "Consultoría de Brand Context Protocol. Hacemos las marcas legibles para agentes de IA mediante archivos estructurados cojav.json.",
+    "alternateName": "Cojav — Brand Context Protocol",
     "url": "https://rainvare.github.io/cojav/",
+    "logo": "https://rainvare.github.io/cojav/assets/logo.png",
+    "description": "Cojav es un protocolo abierto y servicio de consultoría que estructura el contexto de marca en un archivo JSON (cojav.json) para que agentes de IA recomienden negocios con precisión. Creado por Indira Réquiz.",
     "founder": {
       "@type": "Person",
-      "name": "R. Indira Valentina Réquiz Molina",
-      "email": "indirarequiz@gmail.com",
-      "jobTitle": "AI Implementation Strategist"
+      "name": "Indira Réquiz",
+      "jobTitle": "AI Implementation Strategist",
+      "url": "https://github.com/rainvare"
     },
-    "areaServed": "Worldwide",
-    "serviceType": ["Brand Context Consulting", "AI Agent Optimization", "Agentic Commerce Readiness", "Semantic Catalog Structuring"],
-    "knowsAbout": ["Brand Context Protocol", "AI Agent Optimization", "Knowledge Graphs", "Agentic Commerce", "Semantic Product Catalogs"],
-    "offers": {
-      "@type": "Offer",
-      "name": "Brand Context Audit",
-      "description": "Free audit of how AI agents currently perceive your brand, with actionable recommendations",
-      "price": "0",
-      "priceCurrency": "USD"
+    "foundingDate": "2026",
+    "sameAs": [
+      "https://github.com/rainvare/cojav"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "indirarequiz@gmail.com",
+      "contactType": "sales",
+      "availableLanguage": ["Spanish", "English"]
     }
   }
   </script>
 
+  <!-- 4b. WebSite with SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Cojav — Brand Context Protocol",
+    "url": "https://rainvare.github.io/cojav/",
+    "description": "Protocolo abierto para hacer marcas visibles a agentes de IA. Consultoría de Agent Commerce Optimization (ACO).",
+    "inLanguage": ["es", "en"]
+  }
+  </script>
+
+  <!-- 4c. Service (la consultoría) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Consultoría Cojav — Agent Commerce Optimization",
+    "alternateName": "ACO Consulting",
+    "description": "Servicio de consultoría que audita la presencia digital de una marca, construye su archivo cojav.json con contexto semántico completo, y lo implementa para que agentes de IA (ChatGPT, Perplexity, Gemini, Claude) recomienden el negocio con precisión.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Cojav"
+    },
+    "serviceType": "Agent Commerce Optimization",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios Cojav",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Auditoría de Visibilidad en IA",
+            "description": "Análisis de cómo los agentes de IA perciben tu marca actualmente, identificando brechas de contexto, datos faltantes y oportunidades de optimización."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Estructuración cojav.json",
+            "description": "Construcción del archivo de contexto de marca con identidad, catálogo semántico, audiencia, políticas y señales de confianza optimizadas para agentes de IA."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Implementación y Mantenimiento",
+            "description": "Despliegue del tag link en el sitio web del cliente, hosting del archivo cojav.json y actualizaciones periódicas del contexto de marca."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- 4d. FAQPage — CLAVE PARA GEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,39 +139,82 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do I make my brand visible to AI agents?",
+        "name": "¿Cómo hago que mi marca aparezca en las recomendaciones de ChatGPT y Perplexity?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Implement a cojav.json file — a structured brand context file that gives AI agents your identity, catalog with semantic attributes, audience segments, policies, and trust signals. Add a single link tag to your HTML head. Cojav provides done-for-you consulting to create and maintain this file."
+          "text": "Los agentes de IA como ChatGPT, Perplexity y Gemini no navegan tu sitio web como los humanos. Necesitan contexto estructurado para entender tu marca. Cojav crea un archivo cojav.json que contiene tu identidad de marca, catálogo con atributos semánticos, audiencia, políticas y señales de confianza en un formato que cualquier agente de IA puede leer. Se implementa con una sola línea de código en tu HTML."
         }
       },
       {
         "@type": "Question",
-        "name": "¿Cómo hago mi marca visible para agentes de IA?",
+        "name": "¿Qué es Agent Commerce Optimization (ACO)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Implementa un archivo cojav.json — un archivo estructurado de contexto de marca que da a los agentes de IA tu identidad, catálogo con atributos semánticos, segmentos de audiencia, políticas y señales de confianza. Agrega un solo tag link a tu HTML. Cojav ofrece consultoría done-for-you para crear y mantener este archivo."
+          "text": "Agent Commerce Optimization (ACO) es la práctica de optimizar la presencia digital de una marca para que los agentes de IA la recomienden con precisión. Mientras que SEO optimiza para buscadores tradicionales y GEO optimiza para motores generativos, ACO se enfoca específicamente en que los agentes autónomos que comparan, recomiendan y compran en nombre de usuarios tengan contexto completo de tu marca. Cojav es la primera implementación de ACO a través de un protocolo de contexto de marca estandarizado."
         }
       },
       {
         "@type": "Question",
-        "name": "What is cojav.json?",
+        "name": "¿Qué es cojav.json y cómo funciona?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "cojav.json is a Brand Context Protocol file — a structured JSON document containing everything an AI agent needs to understand, recommend, and accurately represent a brand. It works on any platform: Shopify, WordPress, Tiendanube, WooCommerce, or custom sites."
+          "text": "cojav.json es un archivo JSON estructurado que vive en una URL pública y contiene todo el contexto que un agente de IA necesita para recomendar tu marca: identidad (nombre, propósito, diferenciador), audiencia (segmentos y jobs-to-be-done), catálogo (productos con atributos semánticos), políticas (envío, pagos, garantías), señales de confianza (certificaciones, antigüedad) y metadatos. Se vincula al sitio web con un tag <link rel='brand-context'> en el HTML."
         }
       },
       {
         "@type": "Question",
-        "name": "How is cojav.json different from llms.txt or AMP?",
+        "name": "¿Cuál es la diferencia entre cojav.json, llms.txt y UCP?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "llms.txt is a documentation index for LLMs. AMP (Azoma) is an enterprise platform for global brands like L'Oréal. cojav.json fills the gap: complete brand context for the 99% of businesses that need AI legibility without enterprise complexity."
+          "text": "llms.txt es un índice de documentación para que LLMs entiendan herramientas de desarrollo y SaaS. UCP (Universal Checkout Protocol) de Shopify maneja transacciones agénticas para merchants de su plataforma. cojav.json es un protocolo agnóstico de plataforma que estructura el contexto completo de marca para cualquier negocio — no solo documentación ni solo checkout, sino identidad, catálogo, audiencia y confianza. Es la capa intermedia entre los estándares simples y los protocolos enterprise como AMP de Azoma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo preparo mi empresa para la economía agéntica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La economía agéntica es el ecosistema donde agentes de IA actúan como consumidores digitales: buscan, comparan, recomiendan y compran. Para preparar tu empresa necesitás: (1) auditar qué entienden los agentes de IA de tu marca hoy, (2) estructurar tu contexto de marca en un formato legible por máquinas como cojav.json, (3) implementar señales de confianza verificables (certificaciones, antigüedad, reviews), y (4) mantener tu contexto actualizado. Cojav ofrece este proceso como consultoría llave en mano."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Funciona cojav.json con Shopify, WordPress, WooCommerce y Tiendanube?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. cojav.json es agnóstico de plataforma. Se implementa agregando un solo tag <link> en el <head> del HTML de cualquier sitio web. Funciona con Shopify, WordPress, WooCommerce, Tiendanube, Wix, sitios custom y cualquier plataforma que permita editar HTML. El archivo JSON se hostea externamente, por lo que no requiere cambios en la infraestructura del sitio."
         }
       }
     ]
   }
   </script>
+
+  <!-- 4e. Article — para que la landing sea tratada como contenido citeable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cojav — Brand Context Protocol: Haz tu marca visible para agentes de IA",
+    "description": "Protocolo abierto que estructura el contexto de marca en un archivo JSON para que agentes de IA recomienden tu negocio con precisión. Incluye caso de estudio con Café Cabrales.",
+    "author": {
+      "@type": "Person",
+      "name": "Indira Réquiz",
+      "url": "https://github.com/rainvare"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cojav"
+    },
+    "datePublished": "2026-03-01",
+    "dateModified": "2026-03-25",
+    "mainEntityOfPage": "https://rainvare.github.io/cojav/",
+    "keywords": ["brand context protocol", "agent commerce optimization", "agentic commerce", "cojav.json", "AI brand visibility", "GEO", "generative engine optimization"]
+  }
+  </script>
+
+</head>
+  
+  
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -862,8 +998,16 @@
         Brand Context Protocol
       </p>
       <h1 id="hero-heading" data-i18n-html="hero_title">Tu marca es <em>invisible</em> para los agentes de IA.</h1>
-      <p class="hero-sub" data-i18n="hero_sub">Los agentes de IA son los nuevos compradores. Recomiendan, comparan y deciden — pero no pueden leer tu web como los humanos. Cojav estructura tu marca en un solo archivo que cualquier agente entiende.</p>
-
+      
+    <p class="answer-capsule">
+      Cojav es un protocolo abierto de contexto de marca (Brand Context Protocol) 
+      que estructura la identidad, catálogo, audiencia y señales de confianza de 
+      cualquier negocio en un único archivo JSON — <code>cojav.json</code> — legible 
+      por agentes de IA como ChatGPT, Perplexity, Gemini y Claude. Es la primera 
+      implementación de Agent Commerce Optimization (ACO): la práctica de hacer que 
+      los agentes autónomos de IA recomienden tu marca con precisión. Funciona en 
+      cualquier plataforma con una sola línea de código.
+    </p>
       <div class="agent-comparison" role="figure" aria-label="Comparación de percepción de agente IA">
         <div class="comparison-header">
           <span aria-hidden="true">▸</span> <span data-i18n="comp_query">Consulta del agente: "recomendar café argentino de calidad para espresso en casa"</span>
@@ -1150,6 +1294,42 @@
         </article>
       </div>
     </section>
+
+
+    <section id="faq">
+    <h2>Preguntas frecuentes sobre visibilidad de marca en IA</h2>
+
+    <div class="faq-item">
+      <h3>¿Cómo hago que mi marca aparezca en las recomendaciones de ChatGPT y Perplexity?</h3>
+      <p>Los agentes de IA como ChatGPT, Perplexity y Gemini no navegan tu sitio web como los humanos. Necesitan contexto estructurado para entender tu marca. Cojav crea un archivo <code>cojav.json</code> que contiene tu identidad de marca, catálogo con atributos semánticos, audiencia, políticas y señales de confianza en un formato que cualquier agente de IA puede leer. Se implementa con una sola línea de código en tu HTML.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Qué es Agent Commerce Optimization (ACO)?</h3>
+      <p>Agent Commerce Optimization (ACO) es la práctica de optimizar la presencia digital de una marca para que los agentes de IA la recomienden con precisión. Mientras que SEO optimiza para buscadores tradicionales y GEO optimiza para motores generativos, ACO se enfoca específicamente en que los agentes autónomos que comparan, recomiendan y compran en nombre de usuarios tengan contexto completo de tu marca. Cojav es la primera implementación de ACO a través de un protocolo de contexto de marca estandarizado.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Qué es cojav.json y cómo funciona?</h3>
+      <p><code>cojav.json</code> es un archivo JSON estructurado que vive en una URL pública y contiene todo el contexto que un agente de IA necesita para recomendar tu marca: identidad (nombre, propósito, diferenciador), audiencia (segmentos y jobs-to-be-done), catálogo (productos con atributos semánticos), políticas (envío, pagos, garantías), señales de confianza (certificaciones, antigüedad) y metadatos. Se vincula al sitio web con un tag <code>&lt;link rel="brand-context"&gt;</code> en el HTML.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Cuál es la diferencia entre cojav.json, llms.txt y UCP?</h3>
+      <p><strong>llms.txt</strong> es un índice de documentación para que LLMs entiendan herramientas de desarrollo y SaaS. <strong>UCP</strong> (Universal Checkout Protocol) de Shopify maneja transacciones agénticas para merchants de su plataforma. <strong>cojav.json</strong> es un protocolo agnóstico de plataforma que estructura el contexto completo de marca para cualquier negocio — no solo documentación ni solo checkout, sino identidad, catálogo, audiencia y confianza. Es la capa intermedia entre los estándares simples y los protocolos enterprise como AMP de Azoma.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Cómo preparo mi empresa para la economía agéntica?</h3>
+      <p>La economía agéntica es el ecosistema donde agentes de IA actúan como consumidores digitales: buscan, comparan, recomiendan y compran. Para preparar tu empresa necesitás: (1) auditar qué entienden los agentes de IA de tu marca hoy, (2) estructurar tu contexto de marca en un formato legible por máquinas como <code>cojav.json</code>, (3) implementar señales de confianza verificables (certificaciones, antigüedad, reviews), y (4) mantener tu contexto actualizado. Cojav ofrece este proceso como consultoría llave en mano.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Funciona cojav.json con Shopify, WordPress, WooCommerce y Tiendanube?</h3>
+      <p>Sí. <code>cojav.json</code> es agnóstico de plataforma. Se implementa agregando un solo tag <code>&lt;link&gt;</code> en el <code>&lt;head&gt;</code> del HTML de cualquier sitio web. Funciona con Shopify, WordPress, WooCommerce, Tiendanube, Wix, sitios custom y cualquier plataforma que permita editar HTML. El archivo JSON se hostea externamente, por lo que no requiere cambios en la infraestructura del sitio.</p>
+    </div>
+  </section>
+
 
     <!-- CTA -->
     <section class="cta-section reveal" id="audit" aria-labelledby="cta-heading">
